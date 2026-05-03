@@ -95,14 +95,22 @@ function smartSearch() {
   // 🔥 RESET STATE (NO SEARCH)
   // =========================
   if (input === "") {
-    cards.forEach(card => card.style.display = "block");
+  cards.forEach(card => {
+    card.style.display = "block";
 
-    trending.style.display = "block";
-    recommended.style.display = "block";
-    categorySection.style.display = "block";
+    // 🔥 RESET HIGHLIGHT
+    const titleElement = card.querySelector("h3");
+    titleElement.innerHTML = titleElement.innerText;
+  });
 
-    return;
-  }
+  trending.style.display = "block";
+  recommended.style.display = "block";
+  categorySection.style.display = "block";
+
+  box.innerHTML = ""; // clear suggestion
+
+  return;
+}
 
   // =========================
   // 🔥 SEARCH STATE
@@ -176,7 +184,7 @@ function sortBooks(type) {
   const container = document.getElementById("categoryBooks");
   const cards = Array.from(container.querySelectorAll(".book-card"));
 
-  let sorted = cards;
+  let sorted = [...cards];
 
   if (type === "az") {
     sorted.sort((a, b) =>
@@ -186,7 +194,7 @@ function sortBooks(type) {
     );
   }
 
-  if (type === "za") {
+  else if (type === "za") {
     sorted.sort((a, b) =>
       b.querySelector("h3").innerText.localeCompare(
         a.querySelector("h3").innerText
@@ -194,20 +202,16 @@ function sortBooks(type) {
     );
   }
 
-  if (type === "rating") {
-    sorted.sort((a, b) =>
-      parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating)
-    );
+  else if (type === "rating") {
+    sorted.sort((a, b) => {
+      return (parseFloat(b.dataset.rating) || 0) - (parseFloat(a.dataset.rating) || 0);
+    });
   }
 
-  if (type === "popular") {
-    sorted.sort((a, b) =>
-      parseInt(b.dataset.sold) - parseInt(a.dataset.sold)
-    );
-  }
-
-  if (type === "latest") {
-    sorted.reverse(); // simple version
+  else if (type === "popular") {
+    sorted.sort((a, b) => {
+      return (parseInt(b.dataset.sold) || 0) - (parseInt(a.dataset.sold) || 0);
+    });
   }
 
   container.innerHTML = "";
