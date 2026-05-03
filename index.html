@@ -77,9 +77,9 @@
         <h3>Science Theory</h3>
         <p class="price">RM80</p>
         <div class="meta">
-          <span class="rating">⭐ 4.0</span>
+          <span class="rating">⭐ 4.2</span>
           <span class="divider">|</span>
-          <span class="sold">20 sold</span>
+          <span class="sold">38 sold</span>
         </div>
         <button onclick="addToCart(this, event)">Add to Cart</button>
     </div>
@@ -94,6 +94,11 @@
       <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" alt="Tech Book">
       <h3>Introduction of Programming</h3>
       <p class="price">RM28</p>
+      <div class="meta">
+          <span class="rating">⭐ 4.4</span>
+          <span class="divider">|</span>
+          <span class="sold">100 sold</span>
+        </div>
       <button onclick="addToCart(this, event)">Add to Cart</button>
     </div>
 
@@ -200,11 +205,11 @@
     <button onclick="filterGenre('education')">Education</button>
     <button onclick="filterGenre('business')">Business</button>
   </div>
-</section>>
+</section>
 
 <!--Filter Sort-->
 <section id="categoryBooks" class="books">
-  <div class="book-card" data-genre="fiction" onclick="openBook(event, this)">
+  <div class="book-card" data-genre="fiction" data-sold="48" data-rating="5.0" onclick="openBook(event, this)">
 
     <div class="card-top">
       <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
@@ -223,7 +228,7 @@
     <button onclick="addToCart(this, event)">Add to Cart</button>
   </div>
 
-  <div class="book-card" data-genre="business" data-rating="4.6" data-sold="120" onclick="openBook(event, this)">
+  <div class="book-card" data-genre="business" data-sold="120" data-rating="4.6" onclick="openBook(event, this)">
     <div class="card-top">
       <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
         🤍
@@ -241,7 +246,7 @@
     <button onclick="addToCart(this, event)">Add to Cart</button>
   </div>
 
-  <div class="book-card" data-genre="education" onclick="openBook(event, this)">
+  <div class="book-card" data-genre="education" data-sold="50" data-rating="4.8" onclick="openBook(event, this)">
 
     <div class="card-top">
       <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
@@ -260,7 +265,7 @@
     <button onclick="addToCart(this, event)">Add to Cart</button>
   </div>
 
-  <div class="book-card" data-genre="fiction" onclick="openBook(event, this)">
+  <div class="book-card" data-genre="fiction" data-sold="12" data-rating="4.5" onclick="openBook(event, this)">
         <div class="card-top">
           <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
             🤍
@@ -278,21 +283,57 @@
       <button onclick="addToCart(this, event)">Add to Cart</button>
       </div>
 
-      <div class="book-card" onclick="openBook(event, this)">
+      <div class="book-card" data-genre="education" data-sold="35" data-rating="4.0" onclick="openBook(event, this)">
+        <div class="card-top">
+          <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
+            🤍
+          </button>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246" alt="Islamic Book">
+        <h3>Cooking Book</h3>
+        <p class="price">RM30</p>
+        <div class="meta">
+          <span class="rating">⭐ 4.0</span>
+          <span class="divider">|</span>
+          <span class="sold">35 sold</span>
+        </div>
+        <button onclick="addToCart(this, event)">Add to Cart</button>
+      </div>
+
+      <div class="book-card" data-genre="education" data-sold="38" data-rating="4.2" onclick="openBook(event, this)">
+        <div class="card-top">
+          <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
+            🤍
+          </button>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765" alt="Science Book">
+        <h3>Science Theory</h3>
+        <p class="price">RM80</p>
+        <div class="meta">
+          <span class="rating">⭐ 4.2</span>
+          <span class="divider">|</span>
+          <span class="sold">38 sold</span>
+        </div>
+        <button onclick="addToCart(this, event)">Add to Cart</button>
+    </div>
+
+     <div class="book-card" data-genre="education" data-sold="100" data-rating="4.4" onclick="openBook(event, this)">
       <div class="card-top">
         <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
           🤍
         </button>
       </div>
 
-      <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246" alt="Islamic Book">
-      <h3>Cooking Book</h3>
-      <p class="price">RM30</p>
+      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" alt="Tech Book">
+      <h3>Introduction of Programming</h3>
+      <p class="price">RM28</p>
       <div class="meta">
-        <span class="rating">⭐ 4.0</span>
-        <span class="divider">|</span>
-        <span class="sold">35 sold</span>
-      </div>
+          <span class="rating">⭐ 4.4</span>
+          <span class="divider">|</span>
+          <span class="sold">100 sold</span>
+        </div>
       <button onclick="addToCart(this, event)">Add to Cart</button>
     </div>
   </section>
