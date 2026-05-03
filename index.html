@@ -37,11 +37,15 @@
 
   <!--Search-->
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search books..." onkeyup="searchBooks()">
+    <input type="text" id="searchInput" placeholder="Search books...">
+    <div id="suggestionBox"></div>
   </div>
 
+  
+
+  <div id="main-content">
    <!--Trending-->
-  <section class="home-section">
+  <section id="trendingSection" class="home-section">
     <h2>🔥 Trending Books</h2>
     <div class="scroll-container">
       <div class="book-card" onclick="openBook(event, this)">
@@ -137,7 +141,7 @@
     </div>
   </section>
 
-<section class="home-section">
+<section id="recommendedSection" class="home-section">
   <h2>⭐ Recommended for You</h2>
 
   <div class="scroll-container">
@@ -173,17 +177,33 @@
   </div>
 </section>
 
-<section class="home-section">
-  <h2>📚 Categories</h2>
+<section id="categorySection" class="home-section">
+  <div class="category-header">
+    <h2>📚 Categories</h2>
+
+    <div id="sortWrapper" class="sort-wrapper hidden">
+      <button class="sort-btn" onclick="toggleSortMenu()">Filter</button>
+
+      <div id="sortMenu" class="sort-menu">
+        <button onclick="sortBooks('az')">A - Z</button>
+        <button onclick="sortBooks('za')">Z - A</button>
+        <button onclick="sortBooks('rating')">Rating</button>
+        <button onclick="sortBooks('popular')">Popular</button>
+      </div>
+    </div>
+  </div>
+
+  <!--Sort by Genre-->
   <div class="genre-box">
     <button onclick="filterGenre('all')">All</button>
     <button onclick="filterGenre('fiction')">Fiction</button>
     <button onclick="filterGenre('education')">Education</button>
     <button onclick="filterGenre('business')">Business</button>
- </div>
-</section>
+  </div>
+</section>>
 
-<section class="books">
+<!--Filter Sort-->
+<section id="categoryBooks" class="books">
   <div class="book-card" data-genre="fiction" onclick="openBook(event, this)">
 
     <div class="card-top">
@@ -195,10 +215,15 @@
     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c" alt="Book">
     <h3>Atomic Habits</h3>
     <p class="price">RM25</p>
+    <div class="meta">
+        <span class="rating">⭐ 5.0</span>
+        <span class="divider">|</span>
+        <span class="sold">48 sold</span>
+      </div>
     <button onclick="addToCart(this, event)">Add to Cart</button>
   </div>
 
-  <div class="book-card" data-genre="business" onclick="openBook(event, this)">
+  <div class="book-card" data-genre="business" data-rating="4.6" data-sold="120" onclick="openBook(event, this)">
     <div class="card-top">
       <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
         🤍
@@ -208,6 +233,11 @@
     <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Book">
     <h3>Rich Dad Poor Dad</h3>
     <p class="price">RM30</p>
+    <div class="meta">
+        <span class="rating">⭐ 4.6</span>
+        <span class="divider">|</span>
+        <span class="sold">120 sold</span>
+      </div>
     <button onclick="addToCart(this, event)">Add to Cart</button>
   </div>
 
@@ -222,6 +252,11 @@
     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Book">
     <h3>The Psychology of Money</h3>
     <p class="price">RM28</p>
+    <div class="meta">
+        <span class="rating">⭐ 4.8</span>
+        <span class="divider">|</span>
+        <span class="sold">50 sold</span>
+      </div>
     <button onclick="addToCart(this, event)">Add to Cart</button>
   </div>
 
@@ -242,10 +277,30 @@
       </div>
       <button onclick="addToCart(this, event)">Add to Cart</button>
       </div>
-</section>
+
+      <div class="book-card" onclick="openBook(event, this)">
+      <div class="card-top">
+        <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
+          🤍
+        </button>
+      </div>
+
+      <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246" alt="Islamic Book">
+      <h3>Cooking Book</h3>
+      <p class="price">RM30</p>
+      <div class="meta">
+        <span class="rating">⭐ 4.0</span>
+        <span class="divider">|</span>
+        <span class="sold">35 sold</span>
+      </div>
+      <button onclick="addToCart(this, event)">Add to Cart</button>
+    </div>
+  </section>
+
+  </div>
 
   <div id="toast"></div>
-  <h1>SmartBookStore</h1>
+  <h1>SmartBookStore2026</h1>
 
   <script src="script.js"></script>
   </div>
