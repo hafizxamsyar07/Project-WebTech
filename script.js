@@ -7,14 +7,14 @@ function saveCart() {
 }
 
 function addToCart(button, event) {
-event.stopPropagation();
+  event.stopPropagation();
 
   const bookCard = button.parentElement;
   const img = bookCard.querySelector("img").src;
   const title = bookCard.querySelector("h3").innerText;
   const priceElement = bookCard.querySelector(".price");
   const priceText = priceElement.innerText;
-  const price = parseInt(priceText.replace("RM","").trim())
+  const price = parseInt(priceText.replace("RM", "").trim())
 
   let existing = cart.find(item => item.title === title);
 
@@ -75,20 +75,147 @@ function removeItem(title) {
   loadCartPage();
 }
 
+//Smart Search
+function smartSearch() {
+  const input = document.getElementById("searchInput").value.trim().toLowerCase();
+  const box = document.getElementById("suggestionBox");
 
-function searchBooks() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  const cards = document.querySelectorAll(".book-card");
+  const trending = document.getElementById("trendingSection");
+  const recommended = document.getElementById("recommendedSection");
+  const categorySection = document.getElementById("categorySection");
+  const sortWrapper = document.getElementById("sortWrapper");
+
+  const cards = document.querySelectorAll("#categoryBooks .book-card");
+
+  box.innerHTML = "";
+
+  const isSearching = input !== "";
+
+  // =========================
+  // 🔥 RESET STATE (NO SEARCH)
+  // =========================
+  if (input === "") {
+  cards.forEach(card => {
+    card.style.display = "block";
+
+    // 🔥 RESET HIGHLIGHT
+    const titleElement = card.querySelector("h3");
+    titleElement.innerHTML = titleElement.innerText;
+  });
+
+  trending.style.display = "block";
+  recommended.style.display = "block";
+  categorySection.style.display = "block";
+
+  box.innerHTML = ""; // clear suggestion
+
+  return;
+}
+
+  // =========================
+  // 🔥 SEARCH STATE
+  // =========================
+  trending.style.display = "none";
+  recommended.style.display = "none";
+  categorySection.style.display = "none";
+
+  let matches = [];
+
+  const suggestionBox = document.getElementById("suggestionBox");
 
   cards.forEach(card => {
-    const title = card.querySelector("h3").innerText.toLowerCase();
+    const titleElement = card.querySelector("h3");
+    const title = titleElement.innerText.toLowerCase();
 
     if (title.includes(input)) {
       card.style.display = "block";
+      matches.push(card.querySelector("h3").innerText);
+      titleElement.innerHTML = highlightText(titleElement.innerText, input);
     } else {
       card.style.display = "none";
+      titleElement.innerHTML = titleElement.innerText;
     }
   });
+
+  if (matches.length === 0) {
+    suggestionBox.innerHTML = `
+    <div class="suggestion-item">
+      ❌ No books found for "${input}"
+    </div>
+  `;
+  }
+
+  // =========================
+  // 🔥 SUGGESTIONS
+  // =========================
+  matches.forEach(title => {
+    const div = document.createElement("div");
+    div.className = "suggestion-item";
+    div.innerText = title;
+
+    div.onclick = () => selectBook(title);
+
+    box.appendChild(div);
+  });
+}
+
+
+function selectBook(title) {
+  const cards = document.querySelectorAll(".book-card");
+
+  cards.forEach(card => {
+    const bookTitle = card.querySelector("h3").innerText;
+
+    if (bookTitle === title) {
+      card.click(); // ini auto trigger openBook
+    }
+  });
+
+  document.getElementById("searchInput").value = title;
+  document.getElementById("suggestionBox").innerHTML = "";
+}
+
+function toggleSortMenu() {
+  const menu = document.getElementById("sortMenu");
+  menu.classList.toggle("show");
+}
+
+function sortBooks(type) {
+  const container = document.getElementById("categoryBooks");
+  const cards = Array.from(container.querySelectorAll(".book-card"));
+
+  let sorted = [...cards];
+
+  if (type === "az") {
+    sorted.sort((a, b) =>
+      a.querySelector("h3").innerText.localeCompare(
+        b.querySelector("h3").innerText
+      )
+    );
+  }
+
+  else if (type === "za") {
+    sorted.sort((a, b) =>
+      b.querySelector("h3").innerText.localeCompare(
+        a.querySelector("h3").innerText
+      )
+    );
+  }
+
+  else if (type === "rating") {
+    sorted.sort((a, b) => {
+      return (parseFloat(b.dataset.rating) || 0) - (parseFloat(a.dataset.rating) || 0);
+    });
+  }
+
+  else if (type === "popular") {
+    sorted.sort((a, b) => {
+      return (parseInt(b.dataset.sold) || 0) - (parseInt(a.dataset.sold) || 0);
+    });
+  }
+
+  container.innerHTML = "";
+  sorted.forEach(card => container.appendChild(card));
 }
 
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
@@ -114,7 +241,7 @@ function toggleWishlist(button) {
 
   console.log("Wishlist:", wishlist);
 }
-  
+
 
 
 function renderWishlistPage() {
@@ -177,7 +304,7 @@ function loadDetail() {
 function addToCartFromDetail() {
   const book = JSON.parse(localStorage.getItem("selectedBook"));
 
-  const price = parseInt(book.price.replace("RM",""));
+  const price = parseInt(book.price.replace("RM", ""));
 
   let existing = cart.find(item => item.title === book.title);
 
@@ -188,7 +315,7 @@ function addToCartFromDetail() {
       title: book.title,
       price: price,
       qty: 1,
-      img : book.img
+      img: book.img
     });
   }
 
@@ -338,3 +465,29 @@ function filterGenre(genre) {
 }
 
 
+const input = document.getElementById("searchInput");
+
+if (input) {
+  input.addEventListener("input", smartSearch);
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      smartSearch();
+    }
+  });
+}
+
+function highlightText(text, keyword) {
+  if (!keyword) return text;
+
+  const regex = new RegExp(`(${keyword})`, "gi");
+  return text.replace(regex, `<span class="highlight">$1</span>`);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sortWrapper = document.getElementById("sortWrapper");
+  if (sortWrapper) {
+    sortWrapper.style.display = "block";
+  }
+});
