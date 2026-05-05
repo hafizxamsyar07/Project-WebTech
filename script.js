@@ -336,3 +336,5 @@ function filterGenre(genre) {
   buttons.forEach(btn => btn.classList.remove("active"));
   event.target.classList.add("active");
 }
+
+
