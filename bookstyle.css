@@ -1,0 +1,166 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: white;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+#search {
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.cart {
+  font-size: 18px;
+}
+
+/* Books */
+.book-section {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+  min-width: 220px;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.card-top {
+  position: relative;
+}
+
+.card-top img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.wish-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.publisher {
+  font-size: 13px;
+  color: gray;
+}
+
+.stock {
+  color: green;
+}
+
+.buy-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 40px;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+
+  position: sticky;
+  top: 0;
+
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #111;
+}
+
+.nav-links a.active {
+  color: #111;
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: black;
+}
+
+nav a {
+  color: black;
+  margin-left: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: none;
+}

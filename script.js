@@ -464,6 +464,7 @@ function filterGenre(genre) {
   event.target.classList.add("active");
 }
 
+
 const input = document.getElementById("searchInput");
 
 if (input) {
