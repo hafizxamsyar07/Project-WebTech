@@ -279,3 +279,8 @@ nav a:hover {
 .footer p {
   margin: 5px 0;
 }
+
+/* Page Wrap */
+.page-wrapper {
+  min-height: 100vh;
+}
