@@ -29,6 +29,7 @@ function addToCart(button, event) {
   renderCart();
 }
 
+
 function openBook(event, card) {
   const title = card.querySelector("h3").innerText;
   const price = card.querySelector(".price").innerText;
@@ -159,6 +160,30 @@ function smartSearch() {
   });
 }
 
+  // Search Book Page
+  const searchInput = document.getElementById("bookSearch");
+
+if (searchInput) {
+  searchInput.addEventListener("input", function () {
+    const keyword = this.value.toLowerCase();
+    const books = document.querySelectorAll("#categoryBooks .book-card");
+
+    books.forEach(card => {
+      const titleElement = card.querySelector("h3");
+      const title = titleElement.innerText;
+
+      if (title.toLowerCase().includes(keyword)) {
+        card.style.display = "block";
+
+        const regex = new RegExp(`(${keyword})`, "gi");
+        titleElement.innerHTML = title.replace(regex, `<span class="highlight">$1</span>`);
+      } else {
+        card.style.display = "none";
+        titleElement.innerHTML = title;
+      }
+    });
+  });
+}
 
 function selectBook(title) {
   const cards = document.querySelectorAll(".book-card");
@@ -218,6 +243,10 @@ function sortBooks(type) {
   sorted.forEach(card => container.appendChild(card));
 }
 
+
+  // =========================
+  // 🔥 WISHLIST
+  // =========================
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
 function toggleWishlist(button) {
@@ -243,7 +272,7 @@ function toggleWishlist(button) {
 }
 
 
-
+// RENDER WISHLIST PAGE
 function renderWishlistPage() {
   const container = document.getElementById("wishlist-container");
 
@@ -271,6 +300,7 @@ function renderWishlistPage() {
   });
 }
 
+// REMOVE WISHLIST
 function removeFromWishlistPage(title) {
   wishlist = wishlist.filter(item => item.title !== title);
 
@@ -491,3 +521,4 @@ document.addEventListener("DOMContentLoaded", () => {
     sortWrapper.style.display = "block";
   }
 });
+
