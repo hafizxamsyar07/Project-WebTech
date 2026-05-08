@@ -1,0 +1,122 @@
+[
+  {
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "category": "Fiction",
+    "price": 42.9,
+    "rating": 4.8,
+    "sold": 148,
+    "date": "2026-01-15",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg"
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "category": "Non-Fiction",
+    "price": 55.0,
+    "rating": 4.9,
+    "sold": 260,
+    "date": "2026-01-22",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+  },
+  {
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "category": "Science",
+    "price": 39.9,
+    "rating": 4.7,
+    "sold": 96,
+    "date": "2025-11-10",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg"
+  },
+  {
+    "title": "Wonder",
+    "author": "R. J. Palacio",
+    "category": "Children",
+    "price": 31.5,
+    "rating": 4.8,
+    "sold": 132,
+    "date": "2025-12-08",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780375869020-L.jpg"
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J. R. R. Tolkien",
+    "category": "Young Adults",
+    "price": 46.0,
+    "rating": 4.9,
+    "sold": 187,
+    "date": "2026-02-03",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg"
+  },
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "category": "Fiction",
+    "price": 49.9,
+    "rating": 4.6,
+    "sold": 156,
+    "date": "2026-02-12",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg"
+  },
+  {
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "category": "Business",
+    "price": 58.0,
+    "rating": 4.7,
+    "sold": 218,
+    "date": "2026-03-01",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780857197689-L.jpg"
+  },
+  {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "category": "Business",
+    "price": 38.9,
+    "rating": 4.5,
+    "sold": 201,
+    "date": "2025-10-19",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg"
+  },
+  {
+    "title": "Diary of a Wimpy Kid",
+    "author": "Jeff Kinney",
+    "category": "Children",
+    "price": 29.9,
+    "rating": 4.6,
+    "sold": 165,
+    "date": "2026-03-14",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780810993136-L.jpg"
+  },
+  {
+    "title": "The Lightning Thief",
+    "author": "Rick Riordan",
+    "category": "Young Adults",
+    "price": 34.9,
+    "rating": 4.7,
+    "sold": 174,
+    "date": "2026-01-05",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780786838653-L.jpg"
+  },
+  {
+    "title": "Maus",
+    "author": "Art Spiegelman",
+    "category": "Graphic Novel & Comics",
+    "price": 44.0,
+    "rating": 4.8,
+    "sold": 84,
+    "date": "2025-09-18",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780679406419-L.jpg"
+  },
+  {
+    "title": "The Montessori Method",
+    "author": "Maria Montessori",
+    "category": "Montessori",
+    "price": 36.5,
+    "rating": 4.4,
+    "sold": 62,
+    "date": "2025-08-21",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780805209228-L.jpg"
+  }
+]

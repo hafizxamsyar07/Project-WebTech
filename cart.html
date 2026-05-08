@@ -1,44 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - SmartBookStore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="cart-body">
   <div class="page-wrapper">
-  <header class="navbar">
-  <a href="index.html" class="logo">SmartBookStore</a>
+    <header class="navbar">
+      <a href="index.html" class="logo">SmartBookStore</a>
 
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="books2.html">Books</a>
-    <a href="wishlist.html">Wishlist</a>
-    <a href="cart.html">Cart</a>
-    <a href="about.html">About</a>
-  </nav>
-  </header>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="cart.html" class="active">Cart</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
 
-  <section class="cart-page">
-    <h1>Your Cart</h1>
+    <section class="cart-page">
+      <div class="cart-header">
+        <div>
+          <span class="cart-label">Checkout</span>
+          <h1>Your Cart</h1>
+          <p>Review your books and fill in the simple checkout details below.</p>
+        </div>
+      </div>
 
-    <div id="cart-items"></div>
-    <div class="cart-summary">
-      <h2 id="cart-total">Total: RM0</h2>
-      <button class="checkout-btn">Checkout</button>
-    </div>
-  </section>
+      <div class="cart-layout">
+        <div class="cart-list-panel">
+          <div class="cart-panel-header">
+            <h2>Order Items</h2>
+            <span id="cart-count">0 items</span>
+          </div>
 
-  <script src="script.js"></script>
-  <script>
-    loadCartPage();
-  </script>
+          <div id="cart-items"></div>
+        </div>
+
+        <aside class="checkout-panel">
+          <h2>Simple Checkout</h2>
+
+          <label>
+            Full Name
+            <input type="text" id="checkout-name" placeholder="Enter your name">
+          </label>
+
+          <label>
+            Phone Number
+            <input type="tel" id="checkout-phone" placeholder="Example: 0123456789">
+          </label>
+
+          <label>
+            Address
+            <textarea id="checkout-address" rows="3" placeholder="Enter delivery address"></textarea>
+          </label>
+
+          <label>
+            Payment Method
+            <select id="checkout-payment">
+              <option value="Cash on Delivery">Cash on Delivery</option>
+              <option value="Online Banking">Online Banking</option>
+              <option value="Card Payment">Card Payment</option>
+            </select>
+          </label>
+
+          <div class="cart-summary">
+            <div>
+              <span>Subtotal</span>
+              <strong id="cart-total">RM0</strong>
+            </div>
+            <div>
+              <span>Delivery</span>
+              <strong>Free</strong>
+            </div>
+            <div class="summary-total">
+              <span>Total</span>
+              <strong id="checkout-total">RM0</strong>
+            </div>
+          </div>
+
+          <button class="checkout-btn" onclick="placeOrder()">Place Order</button>
+        </aside>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+      loadCartPage();
+    </script>
   </div>
 
-<footer class="footer">
-  <p>© 2026 SmartBookStore</p>
-  <p>Built for educational purpose</p>
-</footer>
-
+  <footer class="footer">
+    <p>&copy; 2026 SmartBookStore</p>
+    <p>Built for educational purpose</p>
+  </footer>
 </body>
 </html>
