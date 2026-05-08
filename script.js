@@ -1,3 +1,4 @@
+
 console.log("Website ready!");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
