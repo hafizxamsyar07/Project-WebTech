@@ -1,9 +1,14 @@
+
 console.log("Website ready!");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function renderCart() {
+  loadCartPage();
 }
 
 function addToCart(button, event) {
@@ -356,14 +361,22 @@ function addToCartFromDetail() {
 function loadCartPage() {
   const container = document.getElementById("cart-items");
   const totalDisplay = document.getElementById("cart-total");
+  const checkoutTotal = document.getElementById("checkout-total");
+  const cartCount = document.getElementById("cart-count");
 
   if (!container) return;
 
   container.innerHTML = "";
   let total = 0;
+  let itemCount = 0;
+
+  if (cart.length === 0) {
+    container.innerHTML = `<div class="empty-cart">Your cart is empty. Add some books to start checkout.</div>`;
+  }
 
   cart.forEach(item => {
     total += item.price * item.qty;
+    itemCount += item.qty;
 
     const div = document.createElement("div");
     div.className = "cart-item";
@@ -391,10 +404,39 @@ function loadCartPage() {
     container.appendChild(div);
   });
 
-  totalDisplay.innerText = "Total: RM" + total;
+  if (totalDisplay) totalDisplay.innerText = "RM" + total;
+  if (checkoutTotal) checkoutTotal.innerText = "RM" + total;
+  if (cartCount) cartCount.innerText = itemCount + (itemCount === 1 ? " item" : " items");
 }
 
 loadCartPage();
+
+function placeOrder() {
+  const name = document.getElementById("checkout-name").value.trim();
+  const phone = document.getElementById("checkout-phone").value.trim();
+  const address = document.getElementById("checkout-address").value.trim();
+  const payment = document.getElementById("checkout-payment").value;
+
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  if (!name || !phone || !address) {
+    alert("Please fill in your name, phone number, and address.");
+    return;
+  }
+
+  alert("Order placed successfully! Payment method: " + payment);
+
+  cart = [];
+  saveCart();
+  loadCartPage();
+
+  document.getElementById("checkout-name").value = "";
+  document.getElementById("checkout-phone").value = "";
+  document.getElementById("checkout-address").value = "";
+}
 
 function showToast(message) {
   const toast = document.getElementById("toast");
@@ -475,7 +517,7 @@ function resetAccessibility() {
 
 //sort by genre
 function filterGenre(genre) {
-  const cards = document.querySelectorAll(".book-card");
+  const cards = document.querySelectorAll("#categoryBooks .book-card");
   const buttons = document.querySelectorAll(".genre-box button");
 
   // filter
@@ -494,6 +536,170 @@ function filterGenre(genre) {
   event.target.classList.add("active");
 }
 
+function getBookPrice(card) {
+  const priceText = card.querySelector(".price")?.innerText || "RM0";
+  return parseFloat(priceText.replace("RM", "").trim()) || 0;
+}
+
+function getBookTitle(card) {
+  return card.querySelector("h3")?.innerText.trim() || "";
+}
+
+function prepareBookSortData(cards) {
+  cards.forEach((card, index) => {
+    if (!card.dataset.originalIndex) card.dataset.originalIndex = index;
+    if (!card.dataset.sold) card.dataset.sold = String(120 - index * 3);
+    if (!card.dataset.date) card.dataset.date = String(20260101 + index);
+  });
+}
+
+function sortBookPage(type) {
+  const container = document.getElementById("categoryBooks");
+  if (!container) return;
+
+  const cards = Array.from(container.querySelectorAll(".book-card"));
+  prepareBookSortData(cards);
+
+  const sorted = [...cards].sort((a, b) => {
+    if (type === "best-selling") return Number(b.dataset.sold) - Number(a.dataset.sold);
+    if (type === "az") return getBookTitle(a).localeCompare(getBookTitle(b));
+    if (type === "za") return getBookTitle(b).localeCompare(getBookTitle(a));
+    if (type === "price-low") return getBookPrice(a) - getBookPrice(b);
+    if (type === "price-high") return getBookPrice(b) - getBookPrice(a);
+    if (type === "date-old") return Number(a.dataset.date) - Number(b.dataset.date);
+    if (type === "date-new") return Number(b.dataset.date) - Number(a.dataset.date);
+    return Number(a.dataset.originalIndex) - Number(b.dataset.originalIndex);
+  });
+
+  sorted.forEach(card => container.appendChild(card));
+}
+
+function smartSearch() {
+  const searchInput = document.getElementById("searchInput");
+  const box = document.getElementById("suggestionBox");
+  const trending = document.getElementById("trendingSection");
+  const recommended = document.getElementById("recommendedSection");
+  const categorySection = document.getElementById("categorySection");
+  const cards = document.querySelectorAll("#categoryBooks .book-card");
+
+  if (!searchInput || !box) return;
+
+  const input = searchInput.value.trim().toLowerCase();
+  box.innerHTML = "";
+
+  if (input === "") {
+    cards.forEach(card => {
+      card.style.display = "block";
+      const titleElement = card.querySelector("h3");
+      titleElement.innerHTML = titleElement.innerText;
+    });
+
+    if (trending) trending.style.display = "block";
+    if (recommended) recommended.style.display = "block";
+    if (categorySection) categorySection.style.display = "block";
+    return;
+  }
+
+  if (trending) trending.style.display = "none";
+  if (recommended) recommended.style.display = "none";
+  if (categorySection) categorySection.style.display = "none";
+
+  const matches = [];
+
+  cards.forEach(card => {
+    const titleElement = card.querySelector("h3");
+    const title = titleElement.innerText;
+    const searchableTitle = title.toLowerCase();
+    const genre = card.getAttribute("data-genre") || "book";
+    const price = card.querySelector(".price").innerText;
+    const img = card.querySelector("img").src;
+
+    if (searchableTitle.includes(input)) {
+      card.style.display = "block";
+      titleElement.innerHTML = highlightText(title, input);
+      matches.push({ title, genre, price, img });
+    } else {
+      card.style.display = "none";
+      titleElement.innerHTML = title;
+    }
+  });
+
+  if (matches.length === 0) {
+    box.innerHTML = `
+      <div class="suggestion-item no-result">
+        No books found for "${input}"
+      </div>
+    `;
+    return;
+  }
+
+  matches.slice(0, 6).forEach(book => {
+    const div = document.createElement("div");
+    div.className = "suggestion-item";
+    div.innerHTML = `
+      <img src="${book.img}" alt="${book.title}">
+      <div>
+        <strong>${highlightText(book.title, input)}</strong>
+        <span>${book.genre} - ${book.price}</span>
+      </div>
+    `;
+
+    div.onclick = () => selectBook(book.title);
+    box.appendChild(div);
+  });
+}
+
+const featuredBooks = [];
+
+let featuredIndex = 0;
+
+function showFeaturedBook(index) {
+  const wrapper = document.getElementById("featuredBook");
+  const img = document.getElementById("featured-img");
+  const label = document.getElementById("featured-label");
+  const title = document.getElementById("featured-title");
+  const price = document.getElementById("featured-price");
+  const dots = document.querySelectorAll(".featured-dots button");
+
+  if (!wrapper || !img || !label || !title || !price) return;
+
+  const book = featuredBooks[index];
+  if (!book) return;
+  wrapper.classList.add("is-changing");
+
+  setTimeout(() => {
+    img.src = book.img;
+    label.innerText = book.label;
+    title.innerText = book.title;
+    price.innerText = book.price;
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("active", dotIndex === index);
+    });
+
+    wrapper.classList.remove("is-changing");
+  }, 250);
+}
+
+function startFeaturedSlider() {
+  if (!document.getElementById("featuredBook")) return;
+
+  document.querySelectorAll(".featured-dots button").forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      featuredIndex = index;
+      showFeaturedBook(featuredIndex);
+    });
+  });
+
+  setInterval(() => {
+    if (featuredBooks.length === 0) return;
+    featuredIndex = (featuredIndex + 1) % featuredBooks.length;
+    showFeaturedBook(featuredIndex);
+  }, 3000);
+}
+
+startFeaturedSlider();
+
 
 const input = document.getElementById("searchInput");
 
@@ -509,11 +715,330 @@ if (input) {
 }
 
 function highlightText(text, keyword) {
-  if (!keyword) return text;
-
-  const regex = new RegExp(`(${keyword})`, "gi");
-  return text.replace(regex, `<span class="highlight">$1</span>`);
+  return text;
 }
+
+let catalogBooks = [];
+let currentBookSort = "featured";
+let currentBookCategory = "all";
+
+async function loadBooksFromSource() {
+  let jsonBooks = [];
+  let apiBooks = [];
+
+  try {
+    const response = await fetch("books.json");
+    if (!response.ok) throw new Error("JSON not found");
+    const books = await response.json();
+    jsonBooks = books.map(normalizeJsonBook);
+  } catch (error) {
+    jsonBooks = [];
+  }
+
+  try {
+    apiBooks = await loadBooksFromApi();
+  } catch (error) {
+    apiBooks = [];
+  }
+
+  const merged = [...jsonBooks, ...apiBooks];
+  const unique = [];
+  const seen = new Set();
+
+  merged.forEach((book, index) => {
+    const key = book.title.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    unique.push({ ...book, originalIndex: index });
+  });
+
+  return unique;
+}
+
+async function loadBooksFromApi() {
+  const response = await fetch("https://openlibrary.org/search.json?q=popular%20books&limit=12");
+  const data = await response.json();
+
+  return data.docs.slice(0, 12).map((book, index) => ({
+    title: book.title || "Untitled Book",
+    author: book.author_name?.[0] || "Unknown Author",
+    category: book.subject?.[0] || "General",
+    price: 25 + index * 3,
+    rating: Math.max(4, 5 - index * 0.05).toFixed(1),
+    sold: 180 - index * 8,
+    date: String(book.first_publish_year || 2024) + "-01-01",
+    cover: book.cover_i
+      ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
+      : "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c"
+  }));
+}
+
+function normalizeJsonBook(book, index) {
+  return {
+    title: book.title,
+    author: book.author || "Unknown Author",
+    category: book.category || "General",
+    price: Number(book.price) || 0,
+    rating: Number(book.rating) || 4.5,
+    sold: Number(book.sold) || 0,
+    date: book.date || "2026-01-01",
+    cover: book.cover || "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c",
+    originalIndex: index
+  };
+}
+
+function formatPrice(price) {
+  return "RM" + Number(price).toFixed(2);
+}
+
+function createBookCard(book) {
+  const card = document.createElement("div");
+  card.className = "book-card";
+  card.dataset.genre = book.category.toLowerCase();
+  card.dataset.sold = book.sold;
+  card.dataset.rating = book.rating;
+  card.dataset.date = book.date.replaceAll("-", "");
+  card.dataset.originalIndex = book.originalIndex;
+  card.onclick = event => openBook(event, card);
+
+  card.innerHTML = `
+    <div class="card-top">
+      <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">♡</button>
+    </div>
+    <img src="${book.cover}" alt="${book.title}">
+    <h3>${book.title}</h3>
+    <p class="price">${formatPrice(book.price)}</p>
+    <p class="publisher">${book.author}</p>
+    <p class="stock">${book.category}</p>
+    <div class="meta">
+      <span class="rating">${book.rating} rating</span>
+      <span class="sold">${book.sold} sold</span>
+    </div>
+    <button onclick="addToCart(this, event)">Add to Cart</button>
+  `;
+
+  return card;
+}
+
+function renderBookCards(container, books) {
+  if (!container) return;
+  container.innerHTML = "";
+  books.forEach(book => container.appendChild(createBookCard(book)));
+}
+
+function renderHomeFromCatalog() {
+  renderBookCards(document.getElementById("trendingBooks"), [...catalogBooks].sort((a, b) => b.sold - a.sold).slice(0, 8));
+  renderBookCards(document.getElementById("recommendedBooks"), [...catalogBooks].sort((a, b) => b.rating - a.rating).slice(0, 6));
+  renderBookCards(document.getElementById("categoryBooks"), catalogBooks);
+  renderPopularCategories();
+  setupFeaturedFromCatalog();
+}
+
+function renderBooksPageFromCatalog() {
+  populateBookCategoryFilter();
+  renderBooksRecommendation();
+  sortBookPage(currentBookSort);
+}
+
+function populateBookCategoryFilter() {
+  const select = document.getElementById("bookCategorySelect");
+  if (!select) return;
+
+  const categories = [...new Set(catalogBooks.map(book => book.category))].sort();
+  select.innerHTML = `<option value="all">All categories</option>`;
+
+  categories.forEach(category => {
+    const option = document.createElement("option");
+    option.value = category;
+    option.innerText = category;
+    select.appendChild(option);
+  });
+}
+
+function renderBooksRecommendation() {
+  const container = document.getElementById("booksRecommendation");
+  if (!container) return;
+
+  const recommended = [...catalogBooks]
+    .sort((a, b) => (b.rating * 100 + b.sold) - (a.rating * 100 + a.sold))
+    .slice(0, 6);
+
+  renderBookCards(container, recommended);
+}
+
+function renderPopularCategories() {
+  const container = document.getElementById("popularCategories");
+  if (!container) return;
+
+  const groups = {};
+  catalogBooks.forEach(book => {
+    groups[book.category] = groups[book.category] || [];
+    groups[book.category].push(book);
+  });
+
+  container.innerHTML = "";
+
+  Object.entries(groups).slice(0, 8).forEach(([category, books]) => {
+    const card = document.createElement("a");
+    card.href = "books.html";
+    card.className = "popular-category-card";
+    card.innerHTML = `
+      <h3>${category}</h3>
+      <div class="category-covers">
+        ${books.slice(0, 3).map(book => `<img src="${book.cover}" alt="${book.title}">`).join("")}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function setupFeaturedFromCatalog() {
+  const wrapper = document.getElementById("featuredBook");
+  const dots = document.getElementById("featured-dots");
+  if (!wrapper || !dots || catalogBooks.length === 0) return;
+
+  featuredBooks.length = 0;
+  catalogBooks.slice(0, 3).forEach(book => {
+    featuredBooks.push({
+      label: "Featured Pick",
+      title: book.title,
+      price: formatPrice(book.price),
+      img: book.cover
+    });
+  });
+
+  dots.innerHTML = featuredBooks.map((_, index) => (
+    `<button class="${index === 0 ? "active" : ""}" type="button" aria-label="Featured book ${index + 1}"></button>`
+  )).join("");
+
+  dots.querySelectorAll("button").forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      featuredIndex = index;
+      showFeaturedBook(featuredIndex);
+    });
+  });
+
+  featuredIndex = 0;
+  showFeaturedBook(0);
+}
+
+function applyBookSearch(keyword, scopeSelector) {
+  const books = document.querySelectorAll(scopeSelector);
+  const value = keyword.trim().toLowerCase();
+
+  books.forEach(card => {
+    const title = card.querySelector("h3")?.innerText.toLowerCase() || "";
+    const author = card.querySelector(".publisher")?.innerText.toLowerCase() || "";
+    const category = card.querySelector(".stock")?.innerText.toLowerCase() || "";
+    card.style.display = title.includes(value) || author.includes(value) || category.includes(value) ? "block" : "none";
+  });
+}
+
+function sortBookPage(type) {
+  currentBookSort = type || currentBookSort;
+  const container = document.getElementById("categoryBooks");
+  if (!container || catalogBooks.length === 0) return;
+
+  const filtered = currentBookCategory === "all"
+    ? [...catalogBooks]
+    : catalogBooks.filter(book => book.category === currentBookCategory);
+
+  const sorted = filtered.sort((a, b) => {
+    if (currentBookSort === "best-selling") return b.sold - a.sold;
+    if (currentBookSort === "az") return a.title.localeCompare(b.title);
+    if (currentBookSort === "za") return b.title.localeCompare(a.title);
+    if (currentBookSort === "price-low") return a.price - b.price;
+    if (currentBookSort === "price-high") return b.price - a.price;
+    if (currentBookSort === "date-old") return new Date(a.date) - new Date(b.date);
+    if (currentBookSort === "date-new") return new Date(b.date) - new Date(a.date);
+    if (currentBookSort === "relevant") return b.rating - a.rating;
+    return a.originalIndex - b.originalIndex;
+  });
+
+  renderBookCards(container, sorted);
+}
+
+function filterBookPage(category) {
+  currentBookCategory = category || "all";
+  sortBookPage(currentBookSort);
+
+  const bookSearch = document.getElementById("bookSearch");
+  if (bookSearch && bookSearch.value.trim()) {
+    applyBookSearch(bookSearch.value, "#categoryBooks .book-card");
+  }
+}
+
+function smartSearch() {
+  const input = document.getElementById("searchInput");
+  const box = document.getElementById("suggestionBox");
+  if (!input || !box) return;
+
+  const value = input.value.trim().toLowerCase();
+  box.innerHTML = "";
+  applyBookSearch(value, "#categoryBooks .book-card");
+
+  if (!value) {
+    document.getElementById("trendingSection").style.display = "block";
+    document.getElementById("recommendedSection").style.display = "block";
+    document.getElementById("categorySection").style.display = "block";
+    document.getElementById("categoryBooks").style.display = "none";
+    return;
+  }
+
+  document.getElementById("trendingSection").style.display = "none";
+  document.getElementById("recommendedSection").style.display = "none";
+  document.getElementById("categorySection").style.display = "none";
+  document.getElementById("categoryBooks").style.display = "grid";
+
+  const matches = catalogBooks.filter(book =>
+    book.title.toLowerCase().includes(value) ||
+    book.author.toLowerCase().includes(value) ||
+    book.category.toLowerCase().includes(value)
+  );
+
+  if (matches.length === 0) {
+    box.innerHTML = `<div class="suggestion-item no-result">No books found for "${value}"</div>`;
+    return;
+  }
+
+  matches.slice(0, 6).forEach(book => {
+    const div = document.createElement("div");
+    div.className = "suggestion-item";
+    div.innerHTML = `
+      <img src="${book.cover}" alt="${book.title}">
+      <div>
+        <strong>${book.title}</strong>
+        <span>${book.category} - ${formatPrice(book.price)}</span>
+      </div>
+    `;
+    div.onclick = () => selectBook(book.title);
+    box.appendChild(div);
+  });
+}
+
+async function initBookCatalog() {
+  catalogBooks = await loadBooksFromSource();
+
+  if (document.body.classList.contains("home-body")) {
+    renderHomeFromCatalog();
+  }
+
+  if (document.getElementById("bookSortSelect")) {
+    renderBooksPageFromCatalog();
+  }
+
+  const homeSearch = document.getElementById("searchInput");
+  if (homeSearch) homeSearch.addEventListener("input", smartSearch);
+
+  const bookSearch = document.getElementById("bookSearch");
+  if (bookSearch) {
+    bookSearch.addEventListener("input", () => {
+      applyBookSearch(bookSearch.value, "#categoryBooks .book-card");
+    });
+  }
+}
+
+initBookCatalog();
 
 document.addEventListener("DOMContentLoaded", () => {
   const sortWrapper = document.getElementById("sortWrapper");

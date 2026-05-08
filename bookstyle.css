@@ -1,7 +1,8 @@
+
 body {
-  font-family: Arial;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  background: #f4f4f4;
+  background: #f4f6f8;
 }
 
 /* Header */
@@ -59,8 +60,8 @@ header {
 
 /* Search Highlight */
 .highlight {
-  background-color: yellow;
-  font-weight: bold;
+  background-color: transparent;
+  font-weight: inherit;
 }
 
 .cart {
@@ -70,9 +71,9 @@ header {
 /* Book Grid */
 .books {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  padding: 50px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0;
 }
 
 .book-container {
@@ -85,10 +86,11 @@ header {
 .book-card {
   position: relative;
   background: white;
-  border-radius: 16px;
+  border: 1px solid #e9edf3;
+  border-radius: 18px;
   overflow: hidden;
   padding: 15px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
   transition: 0.25s;
 }
 
@@ -182,7 +184,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  padding: 0px 40px;
+  padding: 20px 40px;
   background: rgba(255,255,255,0.8);
   backdrop-filter: blur(10px);
 
@@ -191,6 +193,116 @@ header {
 
   border-bottom: 1px solid #eee;
   z-index: 1000;
+}
+
+.books-page {
+  max-width: 1180px;
+  margin: auto;
+  padding: 38px 24px 70px;
+}
+
+.books-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 26px;
+  padding: 30px;
+  background: white;
+  border: 1px solid #e9edf3;
+  border-radius: 22px;
+  box-shadow: 0 14px 35px rgba(24,39,75,0.07);
+}
+
+.books-label {
+  display: inline-flex;
+  width: fit-content;
+  padding: 7px 12px;
+  background: #111;
+  color: white;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.books-hero h1 {
+  margin: 14px 0 8px;
+  color: #111;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.books-hero p {
+  margin: 0;
+  color: #666;
+}
+
+.book-filter {
+  min-width: 250px;
+}
+
+.book-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.book-filter span {
+  display: block;
+  margin-bottom: 7px;
+  color: #444;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.book-filter select {
+  width: 100%;
+  padding: 13px 42px 13px 14px;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+  background: white;
+  color: #333;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.books-section-heading {
+  margin: 30px 0 18px;
+}
+
+.books-section-heading h2 {
+  margin: 10px 0 0;
+  color: #111;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.books-recommendation-section {
+  margin-bottom: 28px;
+}
+
+.recommendation-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 14px;
+}
+
+.recommendation-row .book-card {
+  min-width: 210px;
+  max-width: 210px;
+  flex: 0 0 auto;
+}
+
+.all-books-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .nav-links {
@@ -280,7 +392,91 @@ nav a:hover {
   margin: 5px 0;
 }
 
-/* Page Wrap */
-.page-wrapper {
-  min-height: 100vh;
+@media (max-width: 1024px) {
+  .books {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 16px;
+  }
+
+  .header-right {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    margin-left: 0;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: #f4f6f8;
+  }
+
+  .search-box {
+    width: 100%;
+    margin: 0;
+  }
+
+  .search-box input {
+    width: 100%;
+    max-width: none;
+  }
+
+  .books-hero {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .book-filter {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .book-controls {
+    width: 100%;
+  }
+
+  .recommendation-row .book-card {
+    min-width: 220px;
+    max-width: 220px;
+  }
+
+  .books {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .books-page {
+    padding: 28px 14px 50px;
+  }
+
+  .books-hero h1 {
+    font-size: 28px;
+  }
+
+  .books {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-row .book-card {
+    min-width: 78vw;
+    max-width: 78vw;
+  }
 }

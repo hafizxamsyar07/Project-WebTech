@@ -1,61 +1,120 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Book Detail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Detail - SmartBookStore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="detail-body">
   <div class="page-wrapper">
-  <header class="navbar">
-    <a href="index.html" class="logo">SmartBookStore</a>
+    <header class="navbar">
+      <a href="index.html" class="logo">SmartBookStore</a>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="books2.html">Books</a>
-      <a href="wishlist.html">Wishlist</a>
-      <a href="cart.html">Cart</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="cart.html">Cart</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
 
-  <div class="detail-container">
+    <main class="detail-container">
+      <a href="index.html" class="back-link">Back to Home</a>
 
-    <div class="detail-card">
+      <section class="detail-card">
+        <div class="detail-image">
+          <img id="book-img" alt="Selected book cover">
+        </div>
 
-      <div class="detail-image">
-        <img id="book-img" />
-      </div>
+        <div class="detail-info">
+          <span class="detail-label">Book Detail</span>
+          <h1 id="book-title"></h1>
 
-      <div class="detail-info">
-        <h1 id="book-title"></h1>
-        <p id="book-price"></p>
+          <div class="detail-rating">
+            <span>4.8 rating</span>
+            <span>120 sold</span>
+            <span>In stock</span>
+          </div>
 
-        <p class="desc">
-          A premium selected book from SmartBookStore collection.  
-          Perfect for learning, growth, and productivity.
-        </p>
+          <p id="book-price"></p>
 
-        <button onclick="addToCartFromDetail()">Add to Cart</button>
+          <p class="desc">
+            A premium selected book from SmartBookStore collection. Perfect for learning,
+            growth, and productivity. Add it to your cart and keep your reading list organized.
+          </p>
 
-        <a href="index.html" class="back-link">← Back to Home</a>
-      </div>
+          <div class="detail-benefits">
+            <div>
+              <strong>Fast Delivery</strong>
+              <span>Ready to ship</span>
+            </div>
+            <div>
+              <strong>Secure Checkout</strong>
+              <span>Simple order form</span>
+            </div>
+            <div>
+              <strong>Student Friendly</strong>
+              <span>Easy to browse</span>
+            </div>
+          </div>
 
-    </div>
+          <div class="detail-actions">
+            <button onclick="addToCartFromDetail()">Add to Cart</button>
+            <a href="cart.html">Go to Cart</a>
+          </div>
+        </div>
+      </section>
 
-  </div>
+      <section class="feedback-section">
+        <div class="section-title">
+          <span class="home-label">Customer Feedback</span>
+          <h2>What readers say</h2>
+        </div>
 
-  <div id="toast"></div>
-  <script src="script.js"></script>
-  <script>
-    window.onload = loadDetail;
-  </script>
+        <div class="feedback-grid">
+          <article class="feedback-card">
+            <div class="feedback-top">
+              <strong>Aina</strong>
+              <span>5.0</span>
+            </div>
+            <p>"The book arrived quickly and the detail page made it easy to understand what I was buying."</p>
+          </article>
+
+          <article class="feedback-card">
+            <div class="feedback-top">
+              <strong>Daniel</strong>
+              <span>4.8</span>
+            </div>
+            <p>"Clean design, simple cart process, and the book cover preview helped me choose faster."</p>
+          </article>
+
+          <article class="feedback-card">
+            <div class="feedback-top">
+              <strong>Sofia</strong>
+              <span>4.7</span>
+            </div>
+            <p>"Very user friendly. I like that the wishlist and cart are easy to access from every page."</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast"></div>
+    <script src="script.js"></script>
+    <script>
+      window.onload = loadDetail;
+    </script>
   </div>
 
   <footer class="footer">
-    <p>© 2026 SmartBookStore</p>
+    <p>&copy; 2026 SmartBookStore</p>
     <p>Built for educational purpose</p>
   </footer>
-
 </body>
 </html>
