@@ -21,6 +21,13 @@ header {
   align-items: center;
 }
 
+
+/* Page Wrap */
+.page-wrapper {
+  min-height: 100vh;
+}
+
+
   /* Logo to Home */
 .logo {
   font-size: 18px;
@@ -184,7 +191,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  padding: 20px 40px;
+  padding: 0px 40px;
   background: rgba(255,255,255,0.8);
   backdrop-filter: blur(10px);
 
