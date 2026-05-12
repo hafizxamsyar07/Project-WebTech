@@ -3,6 +3,7 @@ console.log("Website ready!");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+//CART FUNCTION
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
@@ -438,18 +439,7 @@ function placeOrder() {
   document.getElementById("checkout-address").value = "";
 }
 
-function showToast(message) {
-  const toast = document.getElementById("toast");
-
-  toast.innerText = message;
-  toast.classList.add("show");
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2000);
-}
-
-//accessibility
+//ACCESSIBILITY
 let currentFontSize = 100;
 
 // toggle panel
