@@ -439,6 +439,17 @@ function placeOrder() {
   document.getElementById("checkout-address").value = "";
 }
 
+function showToast(message) {
+  const toast = document.getElementById("toast");
+
+  toast.innerText = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2000);
+}
+
 //ACCESSIBILITY
 let currentFontSize = 100;
 
