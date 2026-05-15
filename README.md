@@ -1,6 +1,6 @@
 # Project-WebTech
 
-//Please read this instruction for upload your updated or created file. ( Before execute this step, please make sure you are in the RIGHT directory )
+Please read this instruction for upload your updated or created file. ( Before execute this step, please make sure you are in the RIGHT directory )
 Step 1 : Create new file ( skip this part if your file is already existed )
 Step 2 : Save your file in VSC
          Press : Ctrl + S
