@@ -1,377 +1,99 @@
-<!--Bookstore Books Page-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bookstore</title>
+  <title>SmartBookStore - Books</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="bookstyle.css">
-  <!--<link rel="stylesheet" href="style.css">-->
 </head>
-<body>
-  <div class="page-wrapper">
-            <header class="navbar">
-            <a href="index.html" class="logo">SmartBookStore</a>
-
-              <div class="header-right">
-              <div class="search-box">
-                  <input type="text" id="bookSearch" placeholder="Search books...">
-                  <div id="suggestionBox"></div>
-              </div>
-              
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="books.html">Books</a>
-                <a href="wishlist.html">Wishlist</a>
-                <a href="cart.html">Cart</a>
-                <a href="about.html">About</a>
-            </nav>
-
-            </header>
+<body class="books-body">
+  <div class="page-wrapper">  
     
-        
+    <!-- NAVBAR -->  
+     <header class="navbar">
+    <a href="index.html" class="logo">SmartBookStore</a>
+    <div class="header-right">
+  <div class="search-box">
+    <input type="text" id="bookSearch" placeholder="Search books...">
+    <div id="suggestionBox"></div>
+  </div>
 
-
-<!--<section class="book-section">-->
-  <section id="categoryBooks" class="books">
-    <!--<div class="book-container" id="bookContainer">-->
-
-      <!-- Book -->
-      <div class="book-card" data-title="Teroka Sains">
-        <div class="card-top">
-          <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-              🤍
-            </button>
-        </div>
-        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765" alt="Science Book">
-        <h3>Teroka Sains 2 – Fakta Pelik</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">TEROKA SAINS</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Politik Kandang">
-        <div class="card-top">
-          <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-              🤍
-            </button>
-        </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Politik Kandang</h3>
-        <p class="price">RM28.00</p>
-        <p class="publisher">BIBLIO PRESS</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-        <div class="card-top">
-          <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-              🤍
-            </button>
-        </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Mana Dalil">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Mana Dalil?</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">PTS MILLENNIA</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kitab Para Ku-Cheng">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kitab Para Ku-Cheng 2.0</h3>
-        <p class="price">RM25.00</p>
-        <p class="publisher">PENERBIT KATAPILAR</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-          <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-              🤍
-            </button>
-        </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-        <div class="card-top">
-          <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-              🤍
-            </button>
-        </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <div class="book-card" data-title="Kelab Hati">
-          <div class="card-top">
-            <button class="wish-btn" onclick="toggleWishlist(this); event.stopPropagation();">
-                🤍
-            </button>
-          </div>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-        <h3>Kelab Hati Yang Tersakiti</h3>
-        <p class="price">RM35.00</p>
-        <p class="publisher">WHITE COAT</p>
-        <p class="stock">In stock</p>
-        <button onclick="addToCart(this, event)">Add to Cart</button>
-      </div>
-
-      <!--</div>-->
-  </section>
-
-
-<!--<script type="module" src="book.js"></script> -->
-<script src="script.js"></script>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="books.html" class="active">Books</a>
+    <a href="wishlist.html">Wishlist</a>
+    <a href="cart.html">Cart</a>
+    <a href="about.html">About</a>
+  </nav>
 </div>
 
-<footer class="footer">
-  <p>© 2026 SmartBookStore</p>
-  <p>Built for educational purpose</p>
-</footer>
+  </header>  
+  <main class="books-page">
+    <section class="books-hero">
+      <div>
+        <span class="books-label">Book Collection</span>
+        <h1 id="booksPageTitle">Find books that match your mood.</h1>
+        <p id="booksPageSubtitle">Search by title, author, or category, then sort the results instantly.</p>
+      </div>
+      <div class="hero-stats">
+        <strong id="totalBooksCount">0</strong>
+        <span>books available</span>
+      </div>
+    </section>
 
+    <section class="books-toolbar">
+      <div class="book-filter">
+        <span>Category</span>
+        <select id="bookCategorySelect" onchange="filterBookPage(this.value)">
+          <option value="all">All Categories</option>
+        </select>
+      </div>
 
-<div id="toast"></div>
+      <div class="book-filter">
+        <span>Sort by</span>
+        <select id="bookSortSelect" onchange="sortBookPage(this.value)">
+          <option value="featured">Featured</option>
+          <option value="best-selling">Best Selling</option>
+          <option value="az">A - Z</option>
+          <option value="za">Z - A</option>
+          <option value="price-low">Price Low - High</option>
+          <option value="price-high">Price High - Low</option>
+          <option value="date-new">Newest</option>
+          <option value="date-old">Oldest</option>
+        </select>
+      </div>
+
+      <button class="clear-filter-btn" type="button" onclick="clearBookFilters()">Clear</button>
+    </section>
+
+    <section class="books-recommendation-section">
+      <div class="books-section-heading">
+        <span class="books-label">Recommended For You</span>
+        <h2>Popular picks from this section</h2>
+      </div>
+      <div id="booksRecommendation" class="recommendation-row"></div>
+    </section>
+
+    <section class="all-books-heading">
+      <div>
+        <span class="books-label">Browse</span>
+        <h2 id="bookResultHeading">All Books</h2>
+      </div>
+      <p id="bookResultCount">Showing 0 books</p>
+    </section>
+
+    <section id="categoryBooks" class="books book-grid"></section>
+    <div id="bookEmptyState" class="book-empty-state" hidden>
+      <strong>No matching books found</strong>
+      <span>Try another keyword or clear the filters.</span>
+    </div>
+  </main>
+    </div>
+    <div id="toast"></div>
+    <!-- MAIN SCRIPT -->
+    <script src="script.js?v=accessibility-responsive-email"></script>
+   
 </body>
 </html>

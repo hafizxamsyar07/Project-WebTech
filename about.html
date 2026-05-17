@@ -1,13 +1,15 @@
-<!--Bookstore About Page-->
 <!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - SmartBookStore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="about-body">
   <div class="page-wrapper">
     <header class="navbar">
       <a href="index.html" class="logo">SmartBookStore</a>
@@ -21,108 +23,127 @@
       </nav>
     </header>
 
-    <section class="about-page">
-      <div class="about-hero">
+    <main class="about-page">
+      <section class="about-hero">
         <div>
-          <span class="about-label">About Our Project</span>
-          <h1>SmartBookStore makes browsing books simple, fast, and organized.</h1>
+          <span class="about-label">About SmartBookStore</span>
+          <h1>A simple bookstore experience built for fast browsing and easy checkout.</h1>
           <p>
-            SmartBookStore is a web-based bookstore system created for an academic project.
-            It brings together book browsing, search, cart, and wishlist features in one clean
-            experience.
+            SmartBookStore helps users discover books, save favourites, review cart items,
+            and place orders in one clean web experience.
           </p>
+
+          <div class="about-actions">
+            <a href="books.html" class="hero-btn primary">Browse Books</a>
+            <a href="wishlist.html" class="hero-btn secondary">View Wishlist</a>
+          </div>
         </div>
 
         <div class="about-highlight">
-          <strong>Built with</strong>
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
+          <strong>Project Stack</strong>
+          <span>HTML structure</span>
+          <span>CSS responsive design</span>
+          <span>JavaScript features</span>
+          <span>EmailJS receipt flow</span>
         </div>
-      </div>
+      </section>
 
-      <div class="about-stats">
+      <section class="about-stats">
+        <div>
+          <strong>12+</strong>
+          <span>Catalog books</span>
+        </div>
+        <div>
+          <strong>5</strong>
+          <span>Main pages</span>
+        </div>
         <div>
           <strong>4</strong>
-          <span>Main features</span>
+          <span>Core features</span>
         </div>
-        <div>
-          <strong>4</strong>
-          <span>Team members</span>
-        </div>
-        <div>
-          <strong>2026</strong>
-          <span>Academic project</span>
-        </div>
-      </div>
+      </section>
 
-      <div class="about-section-heading">
-        <span class="about-label">Features</span>
-        <h2>Everything needed for a simple online bookstore</h2>
-      </div>
+      <section class="about-section-heading">
+        <span class="about-label">User Experience</span>
+        <h2>Designed around the way users browse and decide</h2>
+      </section>
 
-      <div class="feature-grid">
-        <div class="feature-card">
+      <section class="feature-grid">
+        <article class="feature-card">
           <span>01</span>
-          <h3>Browse Collection</h3>
-          <p>Explore books in a clear grid layout with cover images and book details.</p>
-        </div>
+          <h3>Smart Search</h3>
+          <p>Users can search titles, authors, and categories with quick suggestions.</p>
+        </article>
 
-        <div class="feature-card">
+        <article class="feature-card">
           <span>02</span>
-          <h3>Search Books</h3>
-          <p>Find books quickly using the search feature and suggestions.</p>
-        </div>
+          <h3>Category Browse</h3>
+          <p>Home category cards lead directly to filtered book pages.</p>
+        </article>
 
-        <div class="feature-card">
+        <article class="feature-card">
           <span>03</span>
-          <h3>Shopping Cart</h3>
-          <p>Add selected books to the cart and review items before checkout.</p>
-        </div>
-
-        <div class="feature-card">
-          <span>04</span>
           <h3>Wishlist</h3>
-          <p>Save favorite books in a wishlist for easy access later.</p>
-        </div>
-      </div>
+          <p>Saved books can be opened, reviewed, removed, or moved to cart.</p>
+        </article>
 
-      <div class="about-section-heading team-heading">
+        <article class="feature-card">
+          <span>04</span>
+          <h3>Receipt Email</h3>
+          <p>Checkout prepares order details for customer and owner email receipts.</p>
+        </article>
+      </section>
+
+      <section class="about-process">
+        <div>
+          <span class="about-label">How It Works</span>
+          <h2>From browsing to receipt in a few steps</h2>
+        </div>
+        <div class="process-list">
+          <div><strong>Browse</strong><span>Explore books from the catalog.</span></div>
+          <div><strong>Save</strong><span>Add interesting books to wishlist.</span></div>
+          <div><strong>Checkout</strong><span>Place an order and receive a receipt.</span></div>
+        </div>
+      </section>
+
+      <section class="about-section-heading team-heading">
         <span class="about-label">Developer Team</span>
         <h2>Project Team Members</h2>
-      </div>
+      </section>
 
-      <div class="team-gallery">
-        <div class="team-member">
-          <img src="image\hafiz.jpeg" alt="Hafiz Amsyar">
+      <section class="team-gallery">
+        <article class="team-member">
+          <img src="image/hafiz.jpeg" alt="Hafiz Amsyar">
           <h3>Hafiz Amsyar</h3>
           <p>Frontend Developer</p>
-        </div>
+        </article>
 
-        <div class="team-member">
-          <img src="image\azfar.jpeg" alt="Azfar Hafiy">
+        <article class="team-member">
+          <img src="image/azfar.jpeg" alt="Azfar Hafiy">
           <h3>Azfar Hafiy</h3>
           <p>UI Designer</p>
-        </div>
+        </article>
 
-        <div class="team-member">
+        <article class="team-member">
           <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Akmal Ali Hanif">
           <h3>Akmal Ali Hanif</h3>
           <p>JavaScript Developer</p>
-        </div>
+        </article>
 
-        <div class="team-member">
+        <article class="team-member">
           <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Alif Azrin">
           <h3>Alif Azrin</h3>
           <p>Content Manager</p>
-        </div>
-      </div>
-    </section>
+        </article>
+      </section>
+    </main>
   </div>
 
   <footer class="footer">
     <p>&copy; 2026 SmartBookStore</p>
     <p>Built for educational purpose</p>
   </footer>
+
+  <script src="script.js?v=accessibility-responsive-email"></script>
 </body>
 </html>

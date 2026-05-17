@@ -1,47 +1,59 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wishlist</title>
+  <title>Wishlist - SmartBookStore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="wishlist-body">
   <div class="page-wrapper">
+    <header class="navbar">
+      <a href="index.html" class="logo">SmartBookStore</a>
 
-  <header class="navbar">
-    <a href="index.html" class="logo">SmartBookStore</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="wishlist.html" class="active">Wishlist</a>
+        <a href="cart.html">Cart</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="books.html">Books</a>
-      <a href="wishlist.html" class="active">Wishlist</a>
-      <a href="cart.html">Cart</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+    <main class="wishlist-page">
+      <section class="wishlist-hero">
+        <div>
+          <span class="wishlist-label">Saved Books</span>
+          <h1>Your Wishlist</h1>
+          <p>Keep books here while you compare choices, then move them to cart whenever you are ready.</p>
+        </div>
+        <div class="wishlist-summary">
+          <strong id="wishlist-count">0</strong>
+          <span>saved books</span>
+        </div>
+      </section>
 
-  <section class="wishlist-page">
+      <section class="wishlist-toolbar">
+        <div>
+          <h2>Books You Saved</h2>
+          <p id="wishlist-helper">Your saved books will appear below.</p>
+        </div>
+        <a href="books.html" class="wishlist-browse-btn">Browse Books</a>
+      </section>
 
-    <h1>Your Wishlist ❤️</h1>
+      <div id="wishlist-container" class="wishlist-grid"></div>
+    </main>
 
-    <!-- GRID CONTAINER -->
-    <div id="wishlist-container" class="wishlist-grid"></div>
-
-  </section>
-
-  <script src="script.js"></script>
-
-  <script>
-    renderWishlistPage();
-  </script>
+    <div id="toast"></div>
+    <script src="script.js?v=accessibility-responsive-email"></script>
   </div>
-  
+
   <footer class="footer">
-    <p>© 2026 SmartBookStore</p>
+    <p>&copy; 2026 SmartBookStore</p>
     <p>Built for educational purpose</p>
   </footer>
-
 </body>
 </html>
