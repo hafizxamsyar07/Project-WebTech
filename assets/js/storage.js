@@ -16,6 +16,10 @@ function writeJson(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
+function removeItem(key) {
+  localStorage.removeItem(key);
+}
+
 // Storage layer: semua localStorage access dikumpulkan di sini.
 export const Store = {
   getCart: () => readJson(CART_KEY, []),
@@ -40,5 +44,9 @@ export const Store = {
     const history = Store.getOrderHistory().filter(item => item.orderId !== order.orderId);
     writeJson(LAST_ORDER_KEY, order);
     writeJson(ORDER_HISTORY_KEY, [order, ...history]);
+  },
+  clearOrderHistory: () => {
+    removeItem(LAST_ORDER_KEY);
+    removeItem(ORDER_HISTORY_KEY);
   }
 };

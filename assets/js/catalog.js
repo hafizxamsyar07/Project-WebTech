@@ -482,6 +482,7 @@ function initCatalogEvents() {
   });
 
   document.getElementById("clearBookFilters")?.addEventListener("click", clearBookFilters);
+  document.getElementById("emptyClearBookFilters")?.addEventListener("click", clearBookFilters);
 }
 
 export async function initCatalog() {

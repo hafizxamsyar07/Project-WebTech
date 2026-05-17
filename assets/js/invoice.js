@@ -40,12 +40,14 @@ function renderTracking(order) {
 function getSelectedOrder() {
   const params = new URLSearchParams(window.location.search);
   const orderId = params.get("order");
+  const placed = params.get("placed") === "true";
   const history = Store.getOrderHistory();
   const selectedOrder = orderId ? Store.getOrderById(orderId) : null;
 
   return {
     history,
-    order: selectedOrder || history[0] || Store.getLastOrder()
+    order: selectedOrder || history[0] || Store.getLastOrder(),
+    placed
   };
 }
 
@@ -61,9 +63,12 @@ function renderPurchaseHistory(history, activeOrderId) {
 
   return `
     <div class="invoice-card history-card">
-      <div class="invoice-card-heading">
+      <div class="invoice-card-heading history-heading">
         <h2>Purchase History</h2>
-        <span>${history.length} order${history.length === 1 ? "" : "s"}</span>
+        <div class="history-tools">
+          <span>${history.length} order${history.length === 1 ? "" : "s"}</span>
+          <button type="button" class="history-clear-btn" id="clearHistoryButton" aria-label="Clear purchase history">Bin</button>
+        </div>
       </div>
       <div class="history-list">
         ${history.map(order => `
@@ -80,14 +85,27 @@ function renderPurchaseHistory(history, activeOrderId) {
   `;
 }
 
+function renderOrderConfirmation(order, placed) {
+  if (!placed) return "";
+
+  return `
+    <div class="order-confirmation" role="status">
+      <strong>Thank you for your purchase!</strong>
+      <span>Your order ${escapeHtml(order.orderId)} has been placed successfully. A receipt has been sent to your email.</span>
+    </div>
+  `;
+}
+
 export function initInvoicePage() {
   const container = document.getElementById("invoiceContent");
   if (!container) return;
 
-  const { history, order } = getSelectedOrder();
+  const { history, order, placed } = getSelectedOrder();
   if (!order) return;
 
   container.innerHTML = `
+    ${renderOrderConfirmation(order, placed)}
+
     <section class="invoice-header">
       <div>
         <span class="invoice-label">Invoice</span>
@@ -170,4 +188,10 @@ export function initInvoicePage() {
       </aside>
     </section>
   `;
+
+  document.getElementById("clearHistoryButton")?.addEventListener("click", () => {
+    if (!window.confirm("Clear all purchase history? This cannot be undone.")) return;
+    Store.clearOrderHistory();
+    window.location.href = "invoice.html";
+  });
 }
