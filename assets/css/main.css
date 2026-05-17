@@ -273,7 +273,7 @@ a {
 .books,
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
   gap: 18px;
 }
 
@@ -1582,6 +1582,52 @@ a {
   font-weight: 850;
 }
 
+.history-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.history-list {
+  display: grid;
+  gap: 10px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #e8edf3;
+  border-radius: 14px;
+  background: var(--surface-soft);
+  color: var(--text);
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.history-item:hover,
+.history-item.active {
+  border-color: #b8c8dd;
+  background: var(--accent-soft);
+}
+
+.history-item strong,
+.history-item small {
+  display: block;
+}
+
+.history-item small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.history-item b {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
 .address-card p {
   margin: 8px 0;
   color: var(--muted);
@@ -2182,6 +2228,12 @@ body.negative .footer {
     grid-template-columns: 1fr;
   }
 
+  .books,
+  .book-grid,
+  .wishlist-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
   .all-books-heading,
   .wishlist-toolbar,
   .invoice-header,
@@ -2235,14 +2287,79 @@ body.negative .footer {
     font-size: 22px;
   }
 
-  .books,
-  .book-grid,
   .popular-category-grid,
   .about-stats,
   .feature-grid,
   .team-gallery,
   .detail-benefits {
     grid-template-columns: 1fr;
+  }
+
+  .books,
+  .book-grid,
+  .wishlist-grid,
+  .scroll-container,
+  .recommendation-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    overflow: visible;
+  }
+
+  .book-card,
+  .wishlist-card {
+    min-height: auto;
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .book-card img,
+  .wishlist-card img {
+    border-radius: 10px;
+  }
+
+  .book-card h3,
+  .wishlist-card h3 {
+    min-height: 38px;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .publisher,
+  .stock {
+    font-size: 12px;
+  }
+
+  .meta {
+    gap: 5px;
+    margin: 10px 0;
+  }
+
+  .meta span {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  .book-card > button,
+  .wishlist-actions button {
+    min-height: 38px;
+    font-size: 13px;
+  }
+
+  .card-top {
+    top: 16px;
+    right: 16px;
+  }
+
+  .wish-btn {
+    min-width: 48px;
+    height: 32px;
+    padding: 0 9px;
+    font-size: 11px;
   }
 
   .promo-carousel,
@@ -2286,7 +2403,7 @@ body.negative .footer {
 
   .scroll-container .book-card,
   .recommendation-row .book-card {
-    flex-basis: 78vw;
+    flex-basis: auto;
   }
 
   .wishlist-actions {
@@ -2327,6 +2444,16 @@ body.negative .footer {
   .accessibility-tab {
     right: 12px;
     bottom: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .books,
+  .book-grid,
+  .wishlist-grid,
+  .scroll-container,
+  .recommendation-row {
+    grid-template-columns: 1fr;
   }
 }
 
