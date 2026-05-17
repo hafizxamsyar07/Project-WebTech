@@ -1,4 +1,3 @@
-
 [
   {
     "title": "The Midnight Library",
@@ -119,5 +118,635 @@
     "sold": 62,
     "date": "2025-08-21",
     "cover": "https://covers.openlibrary.org/b/isbn/9780805209228-L.jpg"
+  },
+
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "category": "Fantasy",
+    "price": 45.0,
+    "rating": 4.9,
+    "sold": 320,
+    "date": "2025-06-01",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg"
+  },
+  {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "category": "Fiction",
+    "price": 37.5,
+    "rating": 4.7,
+    "sold": 280,
+    "date": "2025-07-10",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg"
+  },
+  {
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "category": "Productivity",
+    "price": 52.0,
+    "rating": 4.6,
+    "sold": 190,
+    "date": "2025-09-01",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg"
+  },
+  {
+    "title": "Think and Grow Rich",
+    "author": "Napoleon Hill",
+    "category": "Business",
+    "price": 33.9,
+    "rating": 4.5,
+    "sold": 210,
+    "date": "2025-05-20",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781585424337-L.jpg"
+  },
+  {
+    "title": "It Ends With Us",
+    "author": "Colleen Hoover",
+    "category": "Romance",
+    "price": 41.9,
+    "rating": 4.6,
+    "sold": 300,
+    "date": "2025-11-25",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781501110368-L.jpg"
+  },
+
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "category": "Fiction",
+    "price": 35.0,
+    "rating": 4.8,
+    "sold": 240,
+    "date": "2025-03-01",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
+  },
+  {
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "category": "History",
+    "price": 60.0,
+    "rating": 4.8,
+    "sold": 230,
+    "date": "2025-08-15",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg"
+  },
+  {
+    "title": "Homo Deus",
+    "author": "Yuval Noah Harari",
+    "category": "History",
+    "price": 58.0,
+    "rating": 4.7,
+    "sold": 180,
+    "date": "2025-10-02",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062464316-L.jpg"
+  },
+  {
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "category": "Thriller",
+    "price": 45.0,
+    "rating": 4.6,
+    "sold": 210,
+    "date": "2025-04-22",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781250301697-L.jpg"
+  },
+  {
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "category": "Thriller",
+    "price": 47.0,
+    "rating": 4.7,
+    "sold": 205,
+    "date": "2025-02-18",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780307588371-L.jpg"
+  },
+
+  {
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "category": "Historical Fiction",
+    "price": 42.0,
+    "rating": 4.8,
+    "sold": 195,
+    "date": "2025-01-11",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780375842207-L.jpg"
+  },
+  {
+    "title": "All the Light We Cannot See",
+    "author": "Anthony Doerr",
+    "category": "Historical Fiction",
+    "price": 44.0,
+    "rating": 4.7,
+    "sold": 180,
+    "date": "2025-03-27",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781501173219-L.jpg"
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "category": "Biography",
+    "price": 53.0,
+    "rating": 4.8,
+    "sold": 175,
+    "date": "2025-06-10",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg"
+  },
+  {
+    "title": "Becoming",
+    "author": "Michelle Obama",
+    "category": "Biography",
+    "price": 65.0,
+    "rating": 4.9,
+    "sold": 260,
+    "date": "2025-09-20",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781524763138-L.jpg"
+  },
+  {
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "category": "Biography",
+    "price": 62.0,
+    "rating": 4.7,
+    "sold": 240,
+    "date": "2025-08-05",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781451648539-L.jpg"
+  },
+
+  {
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "category": "Philosophy",
+    "price": 28.0,
+    "rating": 4.4,
+    "sold": 150,
+    "date": "2025-02-01",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781599869773-L.jpg"
+  },
+  {
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "category": "Philosophy",
+    "price": 30.0,
+    "rating": 4.6,
+    "sold": 140,
+    "date": "2025-03-15",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780140449334-L.jpg"
+  },
+
+  {
+    "title": "The Power of Habit",
+    "author": "Charles Duhigg",
+    "category": "Self-Help",
+    "price": 49.0,
+    "rating": 4.6,
+    "sold": 200,
+    "date": "2025-05-05",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780812981605-L.jpg"
+  },
+  {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "category": "Self-Help",
+    "price": 57.0,
+    "rating": 4.9,
+    "sold": 270,
+    "date": "2025-12-01",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781544512280-L.jpg"
+  },
+  {
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "category": "Classic",
+    "price": 34.0,
+    "rating": 4.7,
+    "sold": 185,
+    "date": "2025-11-20",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780140449136-L.jpg"
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "category": "Classic",
+    "price": 32.0,
+    "rating": 4.5,
+    "sold": 170,
+    "date": "2025-10-14",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316769488-L.jpg"
+  },
+  {
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "category": "Fiction",
+    "price": 45.0,
+    "rating": 4.8,
+    "sold": 240,
+    "date": "2025-09-05",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780375842207-L.jpg"
+  },
+  {
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "category": "Romance",
+    "price": 38.0,
+    "rating": 4.6,
+    "sold": 260,
+    "date": "2025-08-18",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780142424179-L.jpg"
+  },
+  {
+    "title": "Twilight",
+    "author": "Stephenie Meyer",
+    "category": "Romance",
+    "price": 35.0,
+    "rating": 4.3,
+    "sold": 300,
+    "date": "2025-07-22",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316015844-L.jpg"
+  },
+  {
+    "title": "New Moon",
+    "author": "Stephenie Meyer",
+    "category": "Romance",
+    "price": 36.0,
+    "rating": 4.3,
+    "sold": 280,
+    "date": "2025-07-25",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316024969-L.jpg"
+  },
+  {
+    "title": "Eclipse",
+    "author": "Stephenie Meyer",
+    "category": "Romance",
+    "price": 36.5,
+    "rating": 4.4,
+    "sold": 270,
+    "date": "2025-07-28",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316160209-L.jpg"
+  },
+  {
+    "title": "Breaking Dawn",
+    "author": "Stephenie Meyer",
+    "category": "Romance",
+    "price": 37.0,
+    "rating": 4.5,
+    "sold": 310,
+    "date": "2025-07-30",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316067928-L.jpg"
+  },
+  {
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "category": "Science",
+    "price": 48.0,
+    "rating": 4.8,
+    "sold": 220,
+    "date": "2025-06-10",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780553418026-L.jpg"
+  },
+  {
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "category": "Science",
+    "price": 52.0,
+    "rating": 4.9,
+    "sold": 250,
+    "date": "2025-05-15",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg"
+  },
+  {
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "category": "Self-Help",
+    "price": 55.0,
+    "rating": 4.8,
+    "sold": 290,
+    "date": "2025-04-10",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780743269513-L.jpg"
+  },
+  {
+    "title": "Rich Dad's Cashflow Quadrant",
+    "author": "Robert T. Kiyosaki",
+    "category": "Business",
+    "price": 42.0,
+    "rating": 4.6,
+    "sold": 180,
+    "date": "2025-03-20",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781612680057-L.jpg"
+  },
+  {
+    "title": "Rich Dad's Guide to Investing",
+    "author": "Robert T. Kiyosaki",
+    "category": "Business",
+    "price": 44.0,
+    "rating": 4.6,
+    "sold": 175,
+    "date": "2025-03-25",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781612680200-L.jpg"
+  },
+  {
+    "title": "Start With Why",
+    "author": "Simon Sinek",
+    "category": "Business",
+    "price": 50.0,
+    "rating": 4.7,
+    "sold": 210,
+    "date": "2025-02-18",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781591846444-L.jpg"
+  },
+  {
+    "title": "Leaders Eat Last",
+    "author": "Simon Sinek",
+    "category": "Business",
+    "price": 51.0,
+    "rating": 4.7,
+    "sold": 195,
+    "date": "2025-02-22",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781591848011-L.jpg"
+  },
+  {
+    "title": "The Psychology of Persuasion",
+    "author": "Robert B. Cialdini",
+    "category": "Psychology",
+    "price": 49.0,
+    "rating": 4.8,
+    "sold": 230,
+    "date": "2025-01-15",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780061241895-L.jpg"
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "category": "Psychology",
+    "price": 60.0,
+    "rating": 4.8,
+    "sold": 320,
+    "date": "2024-12-10",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg"
+  },
+  {
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "category": "Fiction",
+    "price": 40.0,
+    "rating": 4.6,
+    "sold": 150,
+    "date": "2024-11-20",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780307387899-L.jpg"
+  },
+  {
+    "title": "Life of Pi",
+    "author": "Yann Martel",
+    "category": "Fiction",
+    "price": 42.0,
+    "rating": 4.7,
+    "sold": 210,
+    "date": "2024-10-05",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780156027328-L.jpg"
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "category": "Non-Fiction",
+    "price": 59.9,
+    "rating": 4.8,
+    "sold": 210,
+    "date": "2026-02-20",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg"
+  },
+  {
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "category": "Non-Fiction",
+    "price": 62.0,
+    "rating": 4.9,
+    "sold": 320,
+    "date": "2026-03-05",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg"
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "category": "Non-Fiction",
+    "price": 54.5,
+    "rating": 4.7,
+    "sold": 175,
+    "date": "2026-01-18",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg"
+  },
+  {
+    "title": "The Power of Habit",
+    "author": "Charles Duhigg",
+    "category": "Non-Fiction",
+    "price": 49.0,
+    "rating": 4.6,
+    "sold": 198,
+    "date": "2025-12-11",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780812981605-L.jpg"
+  },
+  {
+    "title": "Outliers",
+    "author": "Malcolm Gladwell",
+    "category": "Non-Fiction",
+    "price": 47.9,
+    "rating": 4.5,
+    "sold": 160,
+    "date": "2025-11-09",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316017930-L.jpg"
+  },
+
+  {
+    "title": "Watchmen",
+    "author": "Alan Moore",
+    "category": "Graphic Novel & Comics",
+    "price": 65.0,
+    "rating": 4.9,
+    "sold": 240,
+    "date": "2026-02-28",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780930289232-L.jpg"
+  },
+  {
+    "title": "V for Vendetta",
+    "author": "Alan Moore",
+    "category": "Graphic Novel & Comics",
+    "price": 58.0,
+    "rating": 4.8,
+    "sold": 190,
+    "date": "2026-01-30",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781401207922-L.jpg"
+  },
+  {
+    "title": "Batman: The Killing Joke",
+    "author": "Alan Moore",
+    "category": "Graphic Novel & Comics",
+    "price": 39.9,
+    "rating": 4.7,
+    "sold": 210,
+    "date": "2025-10-22",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780930289454-L.jpg"
+  },
+  {
+    "title": "Saga Vol. 1",
+    "author": "Brian K. Vaughan",
+    "category": "Graphic Novel & Comics",
+    "price": 42.0,
+    "rating": 4.8,
+    "sold": 180,
+    "date": "2026-03-10",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781607066019-L.jpg"
+  },
+  {
+    "title": "Spider-Man: Blue",
+    "author": "Jeph Loeb",
+    "category": "Graphic Novel & Comics",
+    "price": 44.5,
+    "rating": 4.6,
+    "sold": 155,
+    "date": "2025-09-14",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780785107949-L.jpg"
+  },
+
+  {
+    "title": "Montessori From the Start",
+    "author": "Paula Polk Lillard",
+    "category": "Montessori",
+    "price": 45.0,
+    "rating": 4.7,
+    "sold": 120,
+    "date": "2026-02-14",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780805211122-L.jpg"
+  },
+  {
+    "title": "The Absorbent Mind",
+    "author": "Maria Montessori",
+    "category": "Montessori",
+    "price": 38.5,
+    "rating": 4.8,
+    "sold": 140,
+    "date": "2025-12-19",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780805209204-L.jpg"
+  },
+  {
+    "title": "Montessori Toddler Discipline",
+    "author": "Simone Davies",
+    "category": "Montessori",
+    "price": 41.0,
+    "rating": 4.6,
+    "sold": 110,
+    "date": "2026-01-25",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781523506897-L.jpg"
+  },
+  {
+    "title": "How to Raise an Amazing Child the Montessori Way",
+    "author": "Tim Seldin",
+    "category": "Montessori",
+    "price": 46.5,
+    "rating": 4.7,
+    "sold": 135,
+    "date": "2025-11-28",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781465460659-L.jpg"
+  },
+  {
+    "title": "Montessori in the Classroom",
+    "author": "Paula Polk Lillard",
+    "category": "Montessori",
+    "price": 39.0,
+    "rating": 4.5,
+    "sold": 98,
+    "date": "2026-03-01",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780805210613-L.jpg"
+  },
+  {
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "category": "Non-Fiction",
+    "price": 52.0,
+    "rating": 4.7,
+    "sold": 185,
+    "date": "2026-02-10",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg"
+  },
+  {
+    "title": "Start With Why",
+    "author": "Simon Sinek",
+    "category": "Non-Fiction",
+    "price": 48.5,
+    "rating": 4.8,
+    "sold": 220,
+    "date": "2026-01-12",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781591846444-L.jpg"
+  },
+  {
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "category": "Non-Fiction",
+    "price": 49.9,
+    "rating": 4.5,
+    "sold": 260,
+    "date": "2025-11-20",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062457714-L.jpg"
+  },
+  {
+    "title": "Think Again",
+    "author": "Adam Grant",
+    "category": "Non-Fiction",
+    "price": 53.0,
+    "rating": 4.7,
+    "sold": 175,
+    "date": "2026-03-08",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781984878106-L.jpg"
+  },
+  {
+    "title": "Grit",
+    "author": "Angela Duckworth",
+    "category": "Non-Fiction",
+    "price": 46.0,
+    "rating": 4.6,
+    "sold": 150,
+    "date": "2025-10-30",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781501111105-L.jpg"
+  },
+  {
+    "title": "The 4-Hour Workweek",
+    "author": "Tim Ferriss",
+    "category": "Non-Fiction",
+    "price": 57.0,
+    "rating": 4.4,
+    "sold": 210,
+    "date": "2025-09-18",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780307465351-L.jpg"
+  },
+  {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "category": "Non-Fiction",
+    "price": 44.0,
+    "rating": 4.8,
+    "sold": 300,
+    "date": "2026-01-05",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780671027032-L.jpg"
+  },
+  {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "category": "Non-Fiction",
+    "price": 59.0,
+    "rating": 4.9,
+    "sold": 280,
+    "date": "2026-02-22",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781544512280-L.jpg"
+  },
+  {
+    "title": "Rich Dad's Guide to Investing",
+    "author": "Robert T. Kiyosaki",
+    "category": "Non-Fiction",
+    "price": 55.5,
+    "rating": 4.6,
+    "sold": 190,
+    "date": "2025-12-28",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg"
   }
 ]
+
+
+
