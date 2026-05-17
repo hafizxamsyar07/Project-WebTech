@@ -621,12 +621,14 @@ function setupAccessibilityPanel() {
         <button type="button" class="accessibility-close" aria-label="Close accessibility tools">x</button>
       </div>
       <div class="accessibility-grid">
-        <button type="button" onclick="increaseText()">A+</button>
-        <button type="button" onclick="decreaseText()">A-</button>
+        <button type="button" onclick="increaseText()">Increase Text</button>
+        <button type="button" onclick="decreaseText()">Decrease text</button>
         <button type="button" onclick="toggleContrast()">Contrast</button>
         <button type="button" onclick="toggleLight()">Light</button>
         <button type="button" onclick="toggleUnderline()">Underline</button>
         <button type="button" onclick="toggleFont()">Readable</button>
+        <button type="button" onclick="toggleGrayscale()">Grayscale</button>
+        <button type="button" onclick="toggleNegative()">Negative</button>
       </div>
       <button type="button" class="accessibility-reset" onclick="resetAccessibility()">Reset settings</button>
     `;
