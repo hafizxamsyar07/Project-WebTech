@@ -122,13 +122,13 @@
 
   {
     "title": "Harry Potter and the Sorcerer's Stone",
-    "author": "J.K. Rowling",
+    "author": "J.K. Rowling ",
     "category": "Fantasy",
     "price": 45.0,
     "rating": 4.9,
     "sold": 320,
     "date": "2025-06-01",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg"
+    "cover": "https://i.postimg.cc/yWqs2rnz/image.png"
   },
   {
     "title": "The Alchemist",
@@ -946,16 +946,6 @@
     "cover": "https://images.unsplash.com/photo-1500964757637-c85e8a162699"
   },
   {
-    "title": "Kisah Para Sahabat Nabi",
-    "author": "Abdul Latip Talib",
-    "category": "Historical Fiction",
-    "price": 39.9,
-    "rating": 4.9,
-    "sold": 600,
-    "date": "2026-01-01",
-    "cover": "https://images.unsplash.com/photo-1526318472351-c75fcf070305"
-  },
-  {
     "title": "The Very Hungry Caterpillar",
     "author": "Eric Carle",
     "category": "Children",
@@ -1013,7 +1003,7 @@
     "rating": 4.9,
     "sold": 600,
     "date": "2026-03-02",
-    "cover": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e"
+    "cover": "https://i.postimg.cc/wjqjzngj/image.png"
   },
   {
     "title": "The Lion King Storybook",
@@ -1043,7 +1033,7 @@
     "rating": 4.8,
     "sold": 520,
     "date": "2026-01-28",
-    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+    "cover": "https://i.postimg.cc/2j0HTZyJ/image.png"
   },
   {
     "title": "Moral Stories for Kids",
@@ -1083,7 +1073,7 @@
     "rating": 4.8,
     "sold": 600,
     "date": "2026-02-01",
-    "cover": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+    "cover": "https://i.postimg.cc/Twg6gcfN/image.png"
   },
   {
     "title": "Divergent",
@@ -1093,7 +1083,7 @@
     "rating": 4.7,
     "sold": 580,
     "date": "2026-01-22",
-    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+    "cover": "https://i.postimg.cc/QtGL8WcZ/image.png"
   },
   {
     "title": "The Hunger Games",
@@ -1103,7 +1093,7 @@
     "rating": 4.9,
     "sold": 750,
     "date": "2026-03-05",
-    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+    "cover": "https://i.postimg.cc/506HVT5S/image.png"
   },
   {
     "title": "Percy Jackson: The Lightning Thief",
@@ -1113,7 +1103,7 @@
     "rating": 4.8,
     "sold": 690,
     "date": "2026-01-15",
-    "cover": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e"
+    "cover": "https://i.postimg.cc/sDFMknMH/image.png"
   },
   {
     "title": "Harry Potter and the Philosopher's Stone",
@@ -1123,7 +1113,7 @@
     "rating": 5.0,
     "sold": 1200,
     "date": "2026-01-01",
-    "cover": "https://images.unsplash.com/photo-1500964757637-c85e8a162699"
+    "cover": "https://i.postimg.cc/VvKXRnFh/image.png"
   },
   {
     "title": "Six of Crows",
@@ -1133,7 +1123,7 @@
     "rating": 4.8,
     "sold": 540,
     "date": "2025-11-20",
-    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
+    "cover": "https://i.postimg.cc/pdj76X4y/image.png"
   },
   {
     "title": "The Selection",
@@ -1143,7 +1133,7 @@
     "rating": 4.6,
     "sold": 430,
     "date": "2025-10-18",
-    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+    "cover": "https://i.postimg.cc/SNKPpGHb/image.png"
   },
   {
     "title": "We Were Liars",
