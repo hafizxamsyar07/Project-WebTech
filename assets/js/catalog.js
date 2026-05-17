@@ -454,7 +454,15 @@ function initCatalogEvents() {
   });
 
   document.getElementById("searchInput")?.addEventListener("input", () => debounceSearch(runHomeSearch));
+  document.getElementById("homeSearchButton")?.addEventListener("click", runHomeSearch);
+  document.getElementById("searchInput")?.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      runHomeSearch();
+    }
+  });
   document.getElementById("bookSearch")?.addEventListener("input", () => debounceSearch(runBookPageSearch));
+  document.getElementById("bookSearchButton")?.addEventListener("click", runBookPageSearch);
   document.getElementById("bookSearch")?.addEventListener("keydown", event => {
     if (event.key === "Enter") {
       event.preventDefault();
