@@ -435,16 +435,6 @@
     "cover": "https://covers.openlibrary.org/b/isbn/9781612680057-L.jpg"
   },
   {
-    "title": "Rich Dad's Guide to Investing",
-    "author": "Robert T. Kiyosaki",
-    "category": "Business",
-    "price": 44.0,
-    "rating": 4.6,
-    "sold": 175,
-    "date": "2025-03-25",
-    "cover": "https://covers.openlibrary.org/b/isbn/9781612680200-L.jpg"
-  },
-  {
     "title": "Start With Why",
     "author": "Simon Sinek",
     "category": "Business",
@@ -596,17 +586,6 @@
     "cover": "https://covers.openlibrary.org/b/isbn/9781607066019-L.jpg"
   },
   {
-    "title": "Spider-Man: Blue",
-    "author": "Jeph Loeb",
-    "category": "Graphic Novel & Comics",
-    "price": 44.5,
-    "rating": 4.6,
-    "sold": 155,
-    "date": "2025-09-14",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780785107949-L.jpg"
-  },
-
-  {
     "title": "Montessori From the Start",
     "author": "Paula Polk Lillard",
     "category": "Montessori",
@@ -635,26 +614,6 @@
     "sold": 110,
     "date": "2026-01-25",
     "cover": "https://covers.openlibrary.org/b/isbn/9781523506897-L.jpg"
-  },
-  {
-    "title": "How to Raise an Amazing Child the Montessori Way",
-    "author": "Tim Seldin",
-    "category": "Montessori",
-    "price": 46.5,
-    "rating": 4.7,
-    "sold": 135,
-    "date": "2025-11-28",
-    "cover": "https://covers.openlibrary.org/b/isbn/9781465460659-L.jpg"
-  },
-  {
-    "title": "Montessori in the Classroom",
-    "author": "Paula Polk Lillard",
-    "category": "Montessori",
-    "price": 39.0,
-    "rating": 4.5,
-    "sold": 98,
-    "date": "2026-03-01",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780805210613-L.jpg"
   },
   {
     "title": "Deep Work",
@@ -737,16 +696,468 @@
     "cover": "https://covers.openlibrary.org/b/isbn/9781544512280-L.jpg"
   },
   {
-    "title": "Rich Dad's Guide to Investing",
-    "author": "Robert T. Kiyosaki",
-    "category": "Non-Fiction",
-    "price": 55.5,
+    "title": "Rindu Awak Separuh Nyawa",
+    "author": "Syamnuriezmil",
+    "category": "Fiction",
+    "price": 35.0,
     "rating": 4.6,
+    "sold": 180,
+    "date": "2025-12-01",
+    "cover": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "title": "Kau, Aku & Kita",
+    "author": "Syamnuriezmil",
+    "category": "Fiction",
+    "price": 33.5,
+    "rating": 4.5,
+    "sold": 140,
+    "date": "2025-11-15",
+    "cover": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+  },
+  {
+    "title": "Hikayat Sang Pencerita",
+    "author": "A. Samad Said",
+    "category": "Fiction",
+    "price": 28.0,
+    "rating": 4.4,
+    "sold": 95,
+    "date": "2025-09-10",
+    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
+  },
+  {
+    "title": "Memoir Seorang Guru",
+    "author": "Azizi Haji Abdullah",
+    "category": "Non-Fiction",
+    "price": 32.0,
+    "rating": 4.3,
+    "sold": 88,
+    "date": "2025-08-20",
+    "cover": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+  },
+  {
+    "title": "Motivasi Diri Muslim",
+    "author": "Ustaz Pahrol Mohd Juoi",
+    "category": "Non-Fiction",
+    "price": 29.9,
+    "rating": 4.6,
+    "sold": 160,
+    "date": "2026-01-18",
+    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+  },
+  {
+    "title": "Sejarah Melayu",
+    "author": "Tun Seri Lanang",
+    "category": "Non-Fiction",
+    "price": 25.0,
+    "rating": 4.7,
+    "sold": 120,
+    "date": "2025-07-01",
+    "cover": "https://images.unsplash.com/photo-1463320898484-cdee8141c787"
+  },
+  {
+    "title": "Kisah Pejuang Nusantara",
+    "author": "Abdullah Hussain",
+    "category": "Non-Fiction",
+    "price": 31.5,
+    "rating": 4.5,
+    "sold": 110,
+    "date": "2025-10-10",
+    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+  },
+  {
+    "title": "Pelaga",
+    "author": "Faisal Tehrani",
+    "category": "FIXI Fiction",
+    "price": 32.9,
+    "rating": 4.6,
+    "sold": 210,
+    "date": "2026-01-12",
+    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+  },
+  {
+    "title": "Pecah",
+    "author": "Shaz Johar",
+    "category": "FIXI Fiction",
+    "price": 34.5,
+    "rating": 4.7,
+    "sold": 240,
+    "date": "2026-02-01",
+    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+  },
+  {
+    "title": "Kukubesi",
+    "author": "Adib Zaini",
+    "category": "FIXI Fiction",
+    "price": 31.0,
+    "rating": 4.5,
     "sold": 190,
-    "date": "2025-12-28",
-    "cover": "https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg"
+    "date": "2025-10-15",
+    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
+  },
+  {
+    "title": "Hantu Dalam Botol",
+    "author": "Anuar Hadi",
+    "category": "FIXI Horror",
+    "price": 33.9,
+    "rating": 4.6,
+    "sold": 220,
+    "date": "2026-03-05",
+    "cover": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+  },
+  {
+    "title": "Sangkar",
+    "author": "Raja Ahmad Aminullah",
+    "category": "FIXI Thriller",
+    "price": 36.0,
+    "rating": 4.8,
+    "sold": 260,
+    "date": "2026-01-28",
+    "cover": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e"
+  },
+  {
+    "title": "Kisah Rumah Kosong",
+    "author": "Faisal Tehrani",
+    "category": "FIXI Horror",
+    "price": 30.5,
+    "rating": 4.3,
+    "sold": 160,
+    "date": "2025-09-21",
+    "cover": "https://images.unsplash.com/photo-1500964757637-c85e8a162699"
+  },
+  {
+    "title": "Siri Malam Jumaat",
+    "author": "Anuar Hadi",
+    "category": "FIXI Horror",
+    "price": 28.9,
+    "rating": 4.4,
+    "sold": 175,
+    "date": "2025-08-30",
+    "cover": "https://images.unsplash.com/photo-1526318472351-c75fcf070305"
+  },
+  {
+    "title": "Operasi Bayang",
+    "author": "Shaz Johar",
+    "category": "FIXI Thriller",
+    "price": 37.5,
+    "rating": 4.7,
+    "sold": 300,
+    "date": "2026-02-20",
+    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+  },
+  {
+    "title": "Darah & Debu",
+    "author": "Adib Zaini",
+    "category": "FIXI Action",
+    "price": 35.9,
+    "rating": 4.6,
+    "sold": 250,
+    "date": "2026-01-02",
+    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+  },
+  {
+    "title": "Salahuddin Al-Ayyubi",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 35.0,
+    "rating": 4.8,
+    "sold": 320,
+    "date": "2026-01-10",
+    "cover": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+  },
+  {
+    "title": "Sultan Muhammad Al-Fateh",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 36.5,
+    "rating": 4.9,
+    "sold": 410,
+    "date": "2026-02-05",
+    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+  },
+  {
+    "title": "Imam Syafi'i",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 32.9,
+    "rating": 4.7,
+    "sold": 275,
+    "date": "2025-12-18",
+    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+  },
+  {
+    "title": "Salahuddin Al-Ayyubi: Pembebas Baitulmaqdis",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 38.0,
+    "rating": 4.9,
+    "sold": 500,
+    "date": "2026-03-01",
+    "cover": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e"
+  },
+  {
+    "title": "Umar Abdul Aziz",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 34.0,
+    "rating": 4.8,
+    "sold": 290,
+    "date": "2025-11-22",
+    "cover": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+  },
+  {
+    "title": "Raja Iskandar Zulkarnain",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 33.5,
+    "rating": 4.7,
+    "sold": 260,
+    "date": "2025-10-30",
+    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+  },
+  {
+    "title": "Perang Salib",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 37.0,
+    "rating": 4.6,
+    "sold": 310,
+    "date": "2026-01-25",
+    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+  },
+  {
+    "title": "Khalid Al-Walid",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 35.5,
+    "rating": 4.9,
+    "sold": 450,
+    "date": "2026-02-12",
+    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
+  },
+  {
+    "title": "Sultan Salahuddin & Tentera Islam",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 36.0,
+    "rating": 4.8,
+    "sold": 380,
+    "date": "2026-03-08",
+    "cover": "https://images.unsplash.com/photo-1500964757637-c85e8a162699"
+  },
+  {
+    "title": "Kisah Para Sahabat Nabi",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 39.9,
+    "rating": 4.9,
+    "sold": 600,
+    "date": "2026-01-01",
+    "cover": "https://images.unsplash.com/photo-1526318472351-c75fcf070305"
+  },
+  {
+    "title": "The Very Hungry Caterpillar",
+    "author": "Eric Carle",
+    "category": "Children",
+    "price": 24.9,
+    "rating": 4.9,
+    "sold": 420,
+    "date": "2026-01-05",
+    "cover": "https://images.unsplash.com/photo-1526318472351-c75fcf070305"
+  },
+  {
+    "title": "Where the Wild Things Are",
+    "author": "Maurice Sendak",
+    "category": "Children",
+    "price": 28.5,
+    "rating": 4.8,
+    "sold": 380,
+    "date": "2025-12-12",
+    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+  },
+  {
+    "title": "Goodnight Moon",
+    "author": "Margaret Wise Brown",
+    "category": "Children",
+    "price": 22.0,
+    "rating": 4.7,
+    "sold": 300,
+    "date": "2025-11-20",
+    "cover": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+  },
+  {
+    "title": "The Gruffalo",
+    "author": "Julia Donaldson",
+    "category": "Children",
+    "price": 26.9,
+    "rating": 4.8,
+    "sold": 450,
+    "date": "2026-02-01",
+    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+  },
+  {
+    "title": "Peppa Pig: Happy Family",
+    "author": "Neville Astley",
+    "category": "Children",
+    "price": 19.9,
+    "rating": 4.6,
+    "sold": 500,
+    "date": "2026-01-18",
+    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+  },
+  {
+    "title": "Disney Frozen: Anna & Elsa",
+    "author": "Disney Books",
+    "category": "Children",
+    "price": 29.9,
+    "rating": 4.9,
+    "sold": 600,
+    "date": "2026-03-02",
+    "cover": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e"
+  },
+  {
+    "title": "The Lion King Storybook",
+    "author": "Disney Books",
+    "category": "Children",
+    "price": 27.5,
+    "rating": 4.8,
+    "sold": 480,
+    "date": "2025-10-25",
+    "cover": "https://images.unsplash.com/photo-1500964757637-c85e8a162699"
+  },
+  {
+    "title": "Boboiboy Adventure Book",
+    "author": "Animonsta Studios",
+    "category": "Children",
+    "price": 25.0,
+    "rating": 4.7,
+    "sold": 390,
+    "date": "2026-02-10",
+    "cover": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+  },
+  {
+    "title": "Upin & Ipin Cerita Keluarga",
+    "author": "Les' Copaque",
+    "category": "Children",
+    "price": 23.9,
+    "rating": 4.8,
+    "sold": 520,
+    "date": "2026-01-28",
+    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+  },
+  {
+    "title": "Moral Stories for Kids",
+    "author": "Malaysia Kids Press",
+    "category": "Children",
+    "price": 21.5,
+    "rating": 4.6,
+    "sold": 310,
+    "date": "2025-09-15",
+    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
+  },
+  {
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "category": "Young Adults",
+    "price": 39.9,
+    "rating": 4.8,
+    "sold": 520,
+    "date": "2026-01-10",
+    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+  },
+  {
+    "title": "Looking for Alaska",
+    "author": "John Green",
+    "category": "Young Adults",
+    "price": 36.5,
+    "rating": 4.7,
+    "sold": 410,
+    "date": "2025-12-05",
+    "cover": "https://images.unsplash.com/photo-1526318472351-c75fcf070305"
+  },
+  {
+    "title": "The Maze Runner",
+    "author": "James Dashner",
+    "category": "Young Adults",
+    "price": 42.0,
+    "rating": 4.8,
+    "sold": 600,
+    "date": "2026-02-01",
+    "cover": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+  },
+  {
+    "title": "Divergent",
+    "author": "Veronica Roth",
+    "category": "Young Adults",
+    "price": 41.5,
+    "rating": 4.7,
+    "sold": 580,
+    "date": "2026-01-22",
+    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+  },
+  {
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "category": "Young Adults",
+    "price": 44.9,
+    "rating": 4.9,
+    "sold": 750,
+    "date": "2026-03-05",
+    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+  },
+  {
+    "title": "Percy Jackson: The Lightning Thief",
+    "author": "Rick Riordan",
+    "category": "Young Adults",
+    "price": 34.9,
+    "rating": 4.8,
+    "sold": 690,
+    "date": "2026-01-15",
+    "cover": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e"
+  },
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "category": "Young Adults",
+    "price": 49.9,
+    "rating": 5.0,
+    "sold": 1200,
+    "date": "2026-01-01",
+    "cover": "https://images.unsplash.com/photo-1500964757637-c85e8a162699"
+  },
+  {
+    "title": "Six of Crows",
+    "author": "Leigh Bardugo",
+    "category": "Young Adults",
+    "price": 46.0,
+    "rating": 4.8,
+    "sold": 540,
+    "date": "2025-11-20",
+    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
+  },
+  {
+    "title": "The Selection",
+    "author": "Kiera Cass",
+    "category": "Young Adults",
+    "price": 38.0,
+    "rating": 4.6,
+    "sold": 430,
+    "date": "2025-10-18",
+    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+  },
+  {
+    "title": "We Were Liars",
+    "author": "E. Lockhart",
+    "category": "Young Adults",
+    "price": 37.5,
+    "rating": 4.7,
+    "sold": 390,
+    "date": "2025-09-10",
+    "cover": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
   }
 ]
+
+
 
 
 
