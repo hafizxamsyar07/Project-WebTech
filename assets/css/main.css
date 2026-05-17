@@ -2224,7 +2224,8 @@ body.negative .footer {
   }
 
   .books-toolbar {
-    position: static;
+    position: sticky;
+    top: 158px;
     grid-template-columns: 1fr;
   }
 
@@ -2390,6 +2391,22 @@ body.negative .footer {
 
   .invoice-grid {
     grid-template-columns: 1fr;
+  }
+
+  .invoice-main {
+    order: 2;
+  }
+
+  .invoice-side {
+    order: 1;
+  }
+
+  .invoice-side .invoice-card:not(.history-card) {
+    order: 2;
+  }
+
+  .history-card {
+    order: 1;
   }
 
   .invoice-header h1 {
