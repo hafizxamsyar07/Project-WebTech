@@ -37,11 +37,54 @@ function renderTracking(order) {
   `).join("");
 }
 
+function getSelectedOrder() {
+  const params = new URLSearchParams(window.location.search);
+  const orderId = params.get("order");
+  const history = Store.getOrderHistory();
+  const selectedOrder = orderId ? Store.getOrderById(orderId) : null;
+
+  return {
+    history,
+    order: selectedOrder || history[0] || Store.getLastOrder()
+  };
+}
+
+function renderPurchaseHistory(history, activeOrderId) {
+  if (!history.length) {
+    return `
+      <div class="invoice-card history-card">
+        <h2>Purchase History</h2>
+        <p>No previous purchases yet.</p>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="invoice-card history-card">
+      <div class="invoice-card-heading">
+        <h2>Purchase History</h2>
+        <span>${history.length} order${history.length === 1 ? "" : "s"}</span>
+      </div>
+      <div class="history-list">
+        ${history.map(order => `
+          <a class="history-item ${order.orderId === activeOrderId ? "active" : ""}" href="invoice.html?order=${encodeURIComponent(order.orderId)}">
+            <span>
+              <strong>${escapeHtml(order.orderId)}</strong>
+              <small>${escapeHtml(order.orderDate)} - ${order.items.length} item${order.items.length === 1 ? "" : "s"}</small>
+            </span>
+            <b>${formatPrice(order.total)}</b>
+          </a>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
 export function initInvoicePage() {
   const container = document.getElementById("invoiceContent");
   if (!container) return;
 
-  const order = Store.getLastOrder();
+  const { history, order } = getSelectedOrder();
   if (!order) return;
 
   container.innerHTML = `
@@ -96,6 +139,8 @@ export function initInvoicePage() {
       </div>
 
       <aside class="invoice-side">
+        ${renderPurchaseHistory(history, order.orderId)}
+
         <div class="invoice-card">
           <h2>Payment Summary</h2>
           <div class="invoice-totals">

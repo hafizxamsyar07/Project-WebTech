@@ -2,6 +2,7 @@ const CART_KEY = "cart";
 const WISHLIST_KEY = "wishlist";
 const SELECTED_BOOK_KEY = "selectedBook";
 const LAST_ORDER_KEY = "lastOrder";
+const ORDER_HISTORY_KEY = "orderHistory";
 
 function readJson(key, fallback) {
   try {
@@ -24,5 +25,20 @@ export const Store = {
   getSelectedBook: () => readJson(SELECTED_BOOK_KEY, null),
   saveSelectedBook: book => writeJson(SELECTED_BOOK_KEY, book),
   getLastOrder: () => readJson(LAST_ORDER_KEY, null),
-  saveLastOrder: order => writeJson(LAST_ORDER_KEY, order)
+  getOrderHistory: () => {
+    const history = readJson(ORDER_HISTORY_KEY, []);
+    const lastOrder = readJson(LAST_ORDER_KEY, null);
+
+    if (!lastOrder || history.some(order => order.orderId === lastOrder.orderId)) {
+      return history;
+    }
+
+    return [lastOrder, ...history];
+  },
+  getOrderById: orderId => Store.getOrderHistory().find(order => order.orderId === orderId) || null,
+  saveLastOrder: order => {
+    const history = Store.getOrderHistory().filter(item => item.orderId !== order.orderId);
+    writeJson(LAST_ORDER_KEY, order);
+    writeJson(ORDER_HISTORY_KEY, [order, ...history]);
+  }
 };
