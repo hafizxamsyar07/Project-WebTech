@@ -1378,6 +1378,7 @@ a {
 
 /* Invoice page */
 .invoice-page {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 38px 24px 70px;
@@ -1385,11 +1386,14 @@ a {
 
 .invoice-shell,
 .invoice-card {
-  border: 1px solid #e9edf3;
+  min-width: 0;
+  border: 1px solid var(--line);
   background: var(--surface);
 }
 
 .invoice-shell {
+  width: 100%;
+  overflow: hidden;
   padding: 28px;
   border-radius: 22px;
   box-shadow: var(--shadow);
@@ -1407,6 +1411,7 @@ a {
   margin: 14px 0 6px;
   font-size: 38px;
   line-height: 1.1;
+  overflow-wrap: anywhere;
 }
 
 .invoice-header p {
@@ -1448,6 +1453,7 @@ a {
 .invoice-main,
 .invoice-side {
   display: grid;
+  min-width: 0;
   gap: 18px;
 }
 
@@ -1480,6 +1486,7 @@ a {
 }
 
 .invoice-table-wrap {
+  max-width: 100%;
   overflow-x: auto;
 }
 
@@ -1518,6 +1525,7 @@ a {
 .invoice-table strong,
 .invoice-table span {
   display: block;
+  overflow-wrap: anywhere;
 }
 
 .invoice-table span {
@@ -1640,6 +1648,7 @@ a {
 
 .history-item {
   display: flex;
+  min-width: 0;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
@@ -1661,6 +1670,7 @@ a {
 .history-item strong,
 .history-item small {
   display: block;
+  overflow-wrap: anywhere;
 }
 
 .history-item small {
@@ -1678,6 +1688,7 @@ a {
   margin: 8px 0;
   color: var(--muted);
   line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .address-card strong {
@@ -2292,6 +2303,26 @@ body.negative .footer {
   .checkout-panel {
     position: static;
   }
+
+  .invoice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .invoice-main {
+    order: 2;
+  }
+
+  .invoice-side {
+    order: 1;
+  }
+
+  .invoice-side .invoice-card:not(.history-card) {
+    order: 2;
+  }
+
+  .history-card {
+    order: 1;
+  }
 }
 
 @media (max-width: 620px) {
@@ -2314,8 +2345,12 @@ body.negative .footer {
   .checkout-panel,
   .invoice-shell,
   .invoice-card {
-    padding: 20px;
+    padding: 18px;
     border-radius: 16px;
+  }
+
+  .invoice-shell {
+    padding: 14px;
   }
 
   .home-hero h1,
@@ -2456,12 +2491,78 @@ body.negative .footer {
   }
 
   .invoice-header h1 {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .invoice-status {
     width: 100%;
+    min-width: 0;
+    padding: 14px;
     text-align: left;
+  }
+
+  .invoice-card h2 {
+    font-size: 19px;
+  }
+
+  .invoice-card-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .invoice-table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    padding: 12px 4px;
+    font-size: 12px;
+  }
+
+  .invoice-table th {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  .invoice-table th:first-child,
+  .invoice-table td:first-child {
+    width: 42%;
+  }
+
+  .invoice-table span,
+  .tracking-steps small,
+  .history-item small {
+    font-size: 11px;
+  }
+
+  .tracking-box {
+    padding: 14px;
+  }
+
+  .history-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .history-item b {
+    align-self: flex-start;
+  }
+
+  .invoice-totals p {
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .invoice-totals .grand-total {
+    font-size: 17px;
+  }
+
+  .address-card p {
+    font-size: 14px;
   }
 
   .scroll-container .book-card,
@@ -2517,6 +2618,64 @@ body.negative .footer {
   .scroll-container,
   .recommendation-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .invoice-table,
+  .invoice-table thead,
+  .invoice-table tbody,
+  .invoice-table tr,
+  .invoice-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .invoice-table thead {
+    display: none;
+  }
+
+  .invoice-table tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .invoice-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 6px 0;
+    border-bottom: 0;
+    text-align: right;
+  }
+
+  .invoice-table td::before {
+    flex: 0 0 76px;
+    color: var(--muted);
+    text-align: left;
+    font-size: 11px;
+    font-weight: 850;
+    text-transform: uppercase;
+  }
+
+  .invoice-table td:nth-child(1)::before {
+    content: "Product";
+  }
+
+  .invoice-table td:nth-child(2)::before {
+    content: "Price";
+  }
+
+  .invoice-table td:nth-child(3)::before {
+    content: "Qty";
+  }
+
+  .invoice-table td:nth-child(4)::before {
+    content: "Total";
+  }
+
+  .invoice-table td:first-child {
+    width: 100%;
   }
 }
 
