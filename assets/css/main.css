@@ -2325,5 +2325,16 @@ body.negative .footer {
     bottom: 18px;
   }
 }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 40px;
+  height: auto;
+  display: block;
+}
 
 
