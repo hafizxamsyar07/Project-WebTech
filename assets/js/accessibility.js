@@ -4,7 +4,7 @@ const tools = [
   ["increase", "Increase Text"],
   ["decrease", "Decrease Text"],
   ["contrast", "Contrast"],
-  ["light", "Light"],
+  ["light", "Light Mode"],
   ["underline", "Underline"],
   ["font", "Readable"],
   ["grayscale", "Grayscale"],
@@ -24,7 +24,7 @@ function applyAccessibilityAction(action) {
     grayscale: "grayscale",
     contrast: "high-contrast",
     negative: "negative",
-    light: "light-bg",
+    light: "light-mode",
     underline: "underline-links",
     font: "readable-font"
   };
@@ -39,7 +39,7 @@ function resetAccessibility() {
     "grayscale",
     "high-contrast",
     "negative",
-    "light-bg",
+    "light-mode",
     "underline-links",
     "readable-font"
   );
