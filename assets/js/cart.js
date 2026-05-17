@@ -127,7 +127,13 @@ export function renderCartPage() {
 
   container.innerHTML = cart.length
     ? cart.map(renderCartItem).join("")
-    : `<div class="empty-cart">Your cart is empty. Add some books to start checkout.</div>`;
+    : `
+      <div class="empty-cart">
+        <strong>Your cart is empty</strong>
+        <span>Add a few books and your checkout summary will appear here.</span>
+        <a href="books.html">Browse Books</a>
+      </div>
+    `;
 
   document.getElementById("cart-total").textContent = formatPrice(subtotal);
   document.getElementById("delivery-fee").textContent = formatPrice(shippingFee);
@@ -298,7 +304,7 @@ async function placeOrder() {
 
   Store.saveCart([]);
   renderCartPage();
-  window.location.href = "invoice.html?order=" + encodeURIComponent(order.orderId);
+  window.location.href = "invoice.html?order=" + encodeURIComponent(order.orderId) + "&placed=true";
 }
 
 export function initCart() {
