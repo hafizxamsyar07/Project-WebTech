@@ -26,7 +26,12 @@
 
     <main class="home-page">
       <div class="search-box home-search">
-        <input type="text" id="searchInput" placeholder="Search books by title, author, or category...">
+        <div class="search-control">
+          <input type="text" id="searchInput" placeholder="Search books by title, author, or category...">
+          <button type="button" id="homeSearchButton" class="search-submit" aria-label="Search books">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
         <div id="suggestionBox"></div>
       </div>
 
