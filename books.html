@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartBookStore - Books</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="bookstyle.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body class="books-body">
   <div class="page-wrapper">  
     
-    <!-- NAVBAR -->  
      <header class="navbar">
     <a href="index.html" class="logo">SmartBookStore</a>
     <div class="header-right">
@@ -25,6 +25,7 @@
     <a href="books.html" class="active">Books</a>
     <a href="wishlist.html">Wishlist</a>
     <a href="cart.html">Cart</a>
+    <a href="invoice.html">Invoice</a>
     <a href="about.html">About</a>
   </nav>
 </div>
@@ -46,14 +47,14 @@
     <section class="books-toolbar">
       <div class="book-filter">
         <span>Category</span>
-        <select id="bookCategorySelect" onchange="filterBookPage(this.value)">
+        <select id="bookCategorySelect">
           <option value="all">All Categories</option>
         </select>
       </div>
 
       <div class="book-filter">
         <span>Sort by</span>
-        <select id="bookSortSelect" onchange="sortBookPage(this.value)">
+        <select id="bookSortSelect">
           <option value="featured">Featured</option>
           <option value="best-selling">Best Selling</option>
           <option value="az">A - Z</option>
@@ -65,7 +66,7 @@
         </select>
       </div>
 
-      <button class="clear-filter-btn" type="button" onclick="clearBookFilters()">Clear</button>
+      <button class="clear-filter-btn" id="clearBookFilters" type="button">Clear</button>
     </section>
 
     <section class="books-recommendation-section">
@@ -92,8 +93,7 @@
   </main>
     </div>
     <div id="toast"></div>
-    <!-- MAIN SCRIPT -->
-    <script src="script.js?v=accessibility-responsive-email"></script>
+    <script type="module" src="assets/js/main.js"></script>
    
 </body>
 </html>

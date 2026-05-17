@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartBookStore</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="home-body">
   <div class="page-wrapper">
-    
     <header class="navbar">
       <a href="index.html" class="logo">SmartBookStore</a>
       <nav class="nav-links">
@@ -18,46 +17,83 @@
         <a href="books.html">Books</a>
         <a href="wishlist.html">Wishlist</a>
         <a href="cart.html">Cart</a>
+        <a href="invoice.html">Invoice</a>
         <a href="about.html">About</a>
       </nav>
     </header>
 
     <main class="home-page">
-      <section class="home-hero">
-        <div class="home-hero-content">
-          <span class="home-label">Online Bookstore</span>
-          <h1>Find your next favorite book in one simple place.</h1>
-          <p>Browse books loaded from JSON, explore categories, and add your picks to cart with a clean bookstore experience.</p>
-
-          <div class="hero-actions">
-            <a href="books.html" class="hero-btn primary">Browse Books</a>
-            <a href="wishlist.html" class="hero-btn secondary">View Wishlist</a>
-          </div>
-        </div>
-
-        <div class="hero-preview" id="featuredBook">
-          <img id="featured-img" src="" alt="Featured book cover">
-          <div class="hero-preview-card">
-            <strong id="featured-label">Featured Pick</strong>
-            <span id="featured-title">Loading books...</span>
-            <p id="featured-price">RM0</p>
-            <div class="featured-dots" id="featured-dots"></div>
-          </div>
-        </div>
-      </section>
-
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search books by title...">
+      <div class="search-box home-search">
+        <input type="text" id="searchInput" placeholder="Search books by title, author, or category...">
         <div id="suggestionBox"></div>
       </div>
+
+      <section class="promo-carousel" data-promo-carousel aria-label="Bookstore promotions">
+        <div class="promo-track">
+          <article class="promo-slide promo-sale is-active">
+            <div>
+              <span>A-May-Zing Deals</span>
+              <h2>20% OFF</h2>
+              <p>With a minimum purchase of 5 books</p>
+              <a href="books.html">Shop Now</a>
+            </div>
+            <div class="promo-books" aria-hidden="true">
+              <i>Dinosaur Atlas</i>
+              <i>Modern Manga</i>
+              <i>Rachel Price</i>
+            </div>
+          </article>
+
+          <article class="promo-slide promo-gift">
+            <div>
+              <span>Digital Gift Card</span>
+              <h2>Give Someone Special</h2>
+              <p>Bookstore credit from RM150 to RM1000</p>
+              <a href="books.html">Shop Now</a>
+            </div>
+            <div class="gift-cards" aria-hidden="true">
+              <i>RM150</i>
+              <i>RM300</i>
+              <i>RM500</i>
+              <i>RM1000</i>
+            </div>
+          </article>
+
+          <article class="promo-slide promo-wallet">
+            <div>
+              <span>Now Accepting</span>
+              <h2>Touch 'n Go & ShopeePay</h2>
+              <p>Easy payment for every checkout</p>
+              <a href="cart.html">Checkout</a>
+            </div>
+            <div class="wallet-icons" aria-hidden="true">
+              <i>TNG</i>
+              <i>Pay</i>
+            </div>
+          </article>
+
+          <article class="promo-slide promo-clearance">
+            <div>
+              <span>Final Copies</span>
+              <h2>40% OFF</h2>
+              <p>Selected titles while stocks last</p>
+              <a href="books.html">Shop Now</a>
+            </div>
+            <strong aria-hidden="true">Last one left</strong>
+          </article>
+        </div>
+
+        <button class="promo-nav promo-prev" type="button" data-promo-prev aria-label="Previous promotion">&lsaquo;</button>
+        <button class="promo-nav promo-next" type="button" data-promo-next aria-label="Next promotion">&rsaquo;</button>
+        <div class="promo-dots" data-promo-dots></div>
+      </section>
 
       <section id="trendingSection" class="home-section">
         <div class="section-title">
           <span class="home-label">Trending</span>
           <h2>Popular This Week</h2>
         </div>
-        <!--Create Book Card-->
-        <div class="scroll-container" id="trendingBooks"></div> 
+        <div class="scroll-container" id="trendingBooks"></div>
       </section>
 
       <section id="recommendedSection" class="home-section">
@@ -65,7 +101,6 @@
           <span class="home-label">Recommended</span>
           <h2>Picked For You</h2>
         </div>
-
         <div class="scroll-container" id="recommendedBooks"></div>
       </section>
 
@@ -74,7 +109,6 @@
           <span class="home-label">Popular Categories</span>
           <h2>Explore books by reader interest</h2>
         </div>
-
         <div class="popular-category-grid" id="popularCategories"></div>
       </section>
 
@@ -82,7 +116,7 @@
     </main>
 
     <div id="toast"></div>
-    <script src="script.js?v=accessibility-responsive-email"></script>
+    <script type="module" src="assets/js/main.js"></script>
   </div>
 
   <footer class="footer">

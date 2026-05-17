@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Detail - SmartBookStore</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="detail-body">
@@ -19,6 +20,7 @@
         <a href="books.html">Books</a>
         <a href="wishlist.html">Wishlist</a>
         <a href="cart.html">Cart</a>
+        <a href="invoice.html">Invoice</a>
         <a href="about.html">About</a>
       </nav>
     </header>
@@ -64,7 +66,7 @@
           </div>
 
           <div class="detail-actions">
-            <button onclick="addToCartFromDetail()">Add to Cart</button>
+            <button id="detail-add-cart" type="button">Add to Cart</button>
             <a href="cart.html">Go to Cart</a>
           </div>
         </div>
@@ -105,10 +107,7 @@
     </main>
 
     <div id="toast"></div>
-    <script src="script.js?v=accessibility-responsive-email"></script>
-    <script>
-      window.onload = loadDetail;
-    </script>
+    <script type="module" src="assets/js/main.js"></script>
   </div>
 
   <footer class="footer">
