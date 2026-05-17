@@ -1474,11 +1474,6 @@ async function initBookCatalog() {
     renderBooksPageFromCatalog();
   }
 
-
-  /*if (document.getElementById("bookSortSelect")) {
-    renderBooksPageFromCatalog();
-  }*/
-
   const homeSearch = document.getElementById("searchInput");
   if (homeSearch) homeSearch.addEventListener("input", smartSearch);
 
