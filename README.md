@@ -1,5 +1,7 @@
 # SmartBookStore
 
+Presentation note: README ini boleh digunakan sebagai skrip ringkas untuk menerangkan tujuan website, struktur file, feature utama, dan cara data/API digunakan.
+
 SmartBookStore is a responsive online bookstore website built with HTML, CSS, and JavaScript. It allows users to browse books, search and filter the catalog, save books to a wishlist, add books to a cart, checkout, and view invoice purchase history.
 
 ## Main Features

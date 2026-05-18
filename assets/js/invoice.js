@@ -1,3 +1,4 @@
+// Presentation note: File ini render invoice, tracking order, alamat penghantaran, dan sejarah pembelian selepas checkout.
 import { Store } from "./storage.js";
 import { escapeHtml, formatPrice } from "./utils.js";
 

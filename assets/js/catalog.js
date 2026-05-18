@@ -1,3 +1,4 @@
+// Presentation note: File ini urus data buku, card buku, search, filter, sort, wishlist/cart action, dan back-to-top button di Books page.
 import { CONFIG } from "./config.js";
 import { addBookToCart } from "./cart.js";
 import { Store } from "./storage.js";
@@ -425,6 +426,22 @@ function clearBookFilters() {
   renderFilteredBookPage();
 }
 
+function initBackToTopButton() {
+  const button = document.getElementById("backToTopButton");
+  if (!button) return;
+
+  const toggleButton = () => {
+    button.classList.toggle("show", window.scrollY > 420);
+  };
+
+  button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", toggleButton, { passive: true });
+  toggleButton();
+}
+
 function initCatalogEvents() {
   document.addEventListener("click", event => {
     const actionButton = event.target.closest("[data-book-action]");
@@ -483,6 +500,7 @@ function initCatalogEvents() {
 
   document.getElementById("clearBookFilters")?.addEventListener("click", clearBookFilters);
   document.getElementById("emptyClearBookFilters")?.addEventListener("click", clearBookFilters);
+  initBackToTopButton();
 }
 
 export async function initCatalog() {

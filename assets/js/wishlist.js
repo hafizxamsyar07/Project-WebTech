@@ -1,3 +1,4 @@
+// Presentation note: File ini urus buku yang user simpan dalam wishlist dan tindakan tambah ke cart atau remove.
 import { addBookToCart } from "./cart.js";
 import { Store } from "./storage.js";
 import { escapeHtml, parsePrice, showToast } from "./utils.js";

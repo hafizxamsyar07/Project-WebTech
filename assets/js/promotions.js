@@ -1,3 +1,4 @@
+// Presentation note: File ini kawal carousel promosi di home page termasuk auto-slide, previous/next, dan dot indicator.
 let promoIndex = 0;
 let promoTimer = null;
 

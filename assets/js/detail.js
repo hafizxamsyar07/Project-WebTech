@@ -1,3 +1,4 @@
+// Presentation note: File ini baca buku yang dipilih daripada localStorage dan render maklumat lengkap di detail page.
 import { addBookToCart } from "./cart.js";
 import { Store } from "./storage.js";
 

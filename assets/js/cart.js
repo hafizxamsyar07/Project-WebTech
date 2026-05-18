@@ -1,3 +1,4 @@
+// Presentation note: File ini urus shopping cart, kuantiti item, voucher, checkout form, validation, dan rekod order.
 import { CONFIG } from "./config.js";
 import { Store } from "./storage.js";
 import { escapeHtml, formatPrice, parsePrice, showToast } from "./utils.js";
