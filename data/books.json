@@ -10,6 +10,36 @@
     "cover": "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg"
   },
   {
+    "title": "Omniscient Reader's Viewpoint Volume 1",
+    "author": "sing N song",
+    "category": "Fantasy",
+    "price": 65,
+    "rating": 4.6,
+    "sold": 175,
+    "date": "2026-03-08",
+    "cover": "https://i.postimg.cc/cCP0Y98r/220520518.jpg"
+  },
+  {
+    "title": "Omniscient Reader's Viewpoint Volume 2",
+    "author": "sing N song",
+    "category": "Fantasy",
+    "price": 65,
+    "rating": 4.7,
+    "sold": 236,
+    "date": "2026-03-08",
+    "cover": "https://i.postimg.cc/k4FbTSy5/download.jpg"
+  },
+  {
+    "title": "Omniscient Reader's Viewpoint Volume 3",
+    "author": "sing N song",
+    "category": "Fantasy",
+    "price": 65,
+    "rating": 4.7,
+    "sold": 250,
+    "date": "2026-03-08",
+    "cover": "https://i.postimg.cc/6qc1xytM/241638390.jpg"
+  },
+  {
     "title": "Atomic Habits",
     "author": "James Clear",
     "category": "Non-Fiction",
