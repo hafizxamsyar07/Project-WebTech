@@ -1,4 +1,5 @@
 let currentFontSize = 100;
+let isLightMode = false;
 
 const tools = [
   ["increase", "Increase Text"],
@@ -20,6 +21,18 @@ function applyAccessibilityAction(action) {
     return;
   }
 
+  if (action === "light") {
+  isLightMode = !isLightMode;
+  document.body.classList.toggle("light-mode");
+
+  const btn = document.querySelector('[data-accessibility="light"]');
+  if (btn) {
+    btn.textContent = isLightMode ? "Dark Mode" : "Light Mode";
+  }
+
+  return;
+  }
+
   const classMap = {
     grayscale: "grayscale",
     contrast: "high-contrast",
@@ -29,6 +42,7 @@ function applyAccessibilityAction(action) {
     font: "readable-font"
   };
 
+  
   if (classMap[action]) document.body.classList.toggle(classMap[action]);
 }
 
