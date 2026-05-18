@@ -1,3 +1,4 @@
+// Presentation note: File ini ialah entry point utama yang hidupkan semua modul apabila page siap dimuatkan.
 import { initAccessibilityPanel } from "./accessibility.js";
 import { initCart } from "./cart.js";
 import { initCatalog } from "./catalog.js";

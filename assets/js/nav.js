@@ -1,3 +1,4 @@
+// Presentation note: File ini kawal active navigation link dan tutup suggestion box apabila user klik luar search area.
 export function initActiveNav() {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 

@@ -1,3 +1,4 @@
+// Presentation note: File ini bina panel accessibility untuk tukar saiz teks, contrast, light mode, underline links, font, grayscale, dan negative mode.
 let currentFontSize = 100;
 let isLightMode = false;
 

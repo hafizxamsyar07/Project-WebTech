@@ -1,3 +1,4 @@
+// Presentation note: File ini pusatkan semua localStorage supaya cart, wishlist, selected book, dan order history konsisten.
 const CART_KEY = "cart";
 const WISHLIST_KEY = "wishlist";
 const SELECTED_BOOK_KEY = "selectedBook";

@@ -1,3 +1,4 @@
+// Presentation note: File ini simpan helper function yang dikongsi seperti format harga, escape HTML, toast, dan show/hide element.
 export function formatPrice(price) {
   return "RM" + Number(price || 0).toFixed(2);
 }

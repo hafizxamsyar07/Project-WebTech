@@ -1,3 +1,4 @@
+// Presentation note: File ini simpan setting penting seperti path data buku, Open Library API, dan EmailJS supaya mudah ditukar di satu tempat.
 // Central config: tukar nilai di sini sahaja jika path data atau EmailJS berubah.
 export const CONFIG = {
   catalogPath: "data/books.json",
