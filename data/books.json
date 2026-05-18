@@ -570,6 +570,26 @@
     "cover": "https://covers.openlibrary.org/b/isbn/9780062457714-L.jpg"
   },
   {
+    "title": "Understanding Islamic 1",
+    "author": "Sabariah Arof",
+    "category": "Education",
+    "price": 20.0,
+    "rating": 4.3,
+    "sold": 184,
+    "date": "2025-08-20",
+    "cover": "https://i.postimg.cc/4NGJJtPx/Whats-App-Image-2026-05-18-at-6-07-42-PM-(1).jpg"
+  },
+  {
+    "title": "Understanding Islamic 2",
+    "author": "Enzy Yahya",
+    "category": "Education",
+    "price": 20.0,
+    "rating": 4.5,
+    "sold": 220,
+    "date": "2025-08-20",
+    "cover": "https://i.postimg.cc/GpKDQdpZ/Whats-App-Image-2026-05-18-at-6-07-42-PM.jpg"
+  },
+  {
     "title": "Think Again",
     "author": "Adam Grant",
     "category": "Non-Fiction",
@@ -617,47 +637,27 @@
     "rating": 4.6,
     "sold": 180,
     "date": "2025-12-01",
-    "cover": "https://covers.openlibrary.org/b/title/Rindu%20Awak%20Separuh%20Nyawa-L.jpg"
+    "cover": "https://i.postimg.cc/V6dG8ryN/9789675822490-medium.jpg"
   },
   {
     "title": "Kau, Aku & Kita",
-    "author": "Syamnuriezmil",
+    "author": "Orkid Edyliyne",
     "category": "Fiction",
     "price": 33.5,
-    "rating": 4.5,
+    "rating": 3.8,
     "sold": 140,
     "date": "2025-11-15",
-    "cover": "https://covers.openlibrary.org/b/title/Kau%20Aku%20Kita-L.jpg"
+    "cover": "https://i.postimg.cc/d0Fs0Cwz/13503699.jpg"
   },
   {
-    "title": "Hikayat Sang Pencerita",
-    "author": "A. Samad Said",
-    "category": "Fiction",
-    "price": 28,
-    "rating": 4.4,
-    "sold": 95,
-    "date": "2025-09-10",
-    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
-  },
-  {
-    "title": "Memoir Seorang Guru",
-    "author": "Azizi Haji Abdullah",
-    "category": "Non-Fiction",
-    "price": 32,
-    "rating": 4.3,
-    "sold": 88,
-    "date": "2025-08-20",
-    "cover": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
-  },
-  {
-    "title": "Motivasi Diri Muslim",
-    "author": "Ustaz Pahrol Mohd Juoi",
-    "category": "Non-Fiction",
-    "price": 29.9,
+    "title": "Motivasi Gaya Rasulullah",
+    "author": "Mohd Khairul Nizam",
+    "category": "Islamic",
+    "price": 14.0,
     "rating": 4.6,
     "sold": 160,
     "date": "2026-01-18",
-    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+    "cover": "https://i.postimg.cc/4NZRVgrg/Motivasi-Gaya-Rasulullah-Final.jpg"
   },
   {
     "title": "Sejarah Melayu",
@@ -670,134 +670,144 @@
     "cover": "https://covers.openlibrary.org/b/title/Sejarah%20Melayu-L.jpg"
   },
   {
-    "title": "Kisah Pejuang Nusantara",
-    "author": "Abdullah Hussain",
-    "category": "Non-Fiction",
+    "title": "Umar Al-Khattab: Pemisah Kebenaran & Kebatilan",
+    "author": "Abdul Latip Talib",
+    "category": "Historical",
     "price": 31.5,
     "rating": 4.5,
     "sold": 110,
     "date": "2025-10-10",
-    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+    "cover": "https://i.postimg.cc/Hs78cQ1d/shopping.webp"
   },
   {
-    "title": "Pelaga",
-    "author": "Faisal Tehrani",
+    "title": "Jelaga",
+    "author": "Faisal Sulaiman",
     "category": "FIXI Fiction",
     "price": 32.9,
     "rating": 4.6,
     "sold": 210,
     "date": "2026-01-12",
-    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+    "cover": "https://i.postimg.cc/3wpjCXHk/243384026.jpg"
+  },
+  {
+    "title": "Anomali",
+    "author": "Syafiq Aizat",
+    "category": "FIXI Thriller",
+    "price": 28,
+    "rating": 4.4,
+    "sold": 95,
+    "date": "2025-09-10",
+    "cover": "https://i.postimg.cc/Kc9q0hVS/shopping.webp"
   },
   {
     "title": "Pecah",
-    "author": "Shaz Johar",
-    "category": "FIXI Fiction",
+    "author": "Khairulnizam Bakeri",
+    "category": "FIXI Thriller",
     "price": 34.5,
     "rating": 4.7,
     "sold": 240,
     "date": "2026-02-01",
-    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+    "cover": "https://i.postimg.cc/d34d5n3J/11113825.jpg"
   },
   {
-    "title": "Kukubesi",
-    "author": "Adib Zaini",
+    "title": "Kampus",
+    "author": "Syafiq Aizat",
     "category": "FIXI Fiction",
     "price": 31,
     "rating": 4.5,
     "sold": 190,
     "date": "2025-10-15",
-    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
+    "cover": "https://i.postimg.cc/GhTh7qHq/34449553.jpg"
   },
   {
-    "title": "Hantu Dalam Botol",
-    "author": "Anuar Hadi",
+    "title": "Asrama",
+    "author": "Muhammad Fatrim",
     "category": "FIXI Horror",
     "price": 33.9,
     "rating": 4.6,
     "sold": 220,
     "date": "2026-03-05",
-    "cover": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+    "cover": "https://i.postimg.cc/Jn94MkFX/17664085.jpg"
   },
   {
-    "title": "Sangkar",
-    "author": "Raja Ahmad Aminullah",
-    "category": "FIXI Thriller",
+    "title": "Ajaib",
+    "author": "Syafiq Aizat",
+    "category": "FIXI Fiction",
     "price": 36,
     "rating": 4.8,
     "sold": 260,
     "date": "2026-01-28",
-    "cover": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e"
+    "cover": "https://i.postimg.cc/YCjVfs07/9789670042152.avif"
   },
   {
-    "title": "Kisah Rumah Kosong",
-    "author": "Faisal Tehrani",
+    "title": "Entiti",
+    "author": "Syafiq Aizat",
     "category": "FIXI Horror",
     "price": 30.5,
     "rating": 4.3,
     "sold": 160,
     "date": "2025-09-21",
-    "cover": "https://images.unsplash.com/photo-1500964757637-c85e8a162699"
+    "cover": "https://i.postimg.cc/NFmmRT2b/40603945.jpg"
   },
   {
-    "title": "Siri Malam Jumaat",
-    "author": "Anuar Hadi",
+    "title": "Kacau",
+    "author": "Ariff Adly",
     "category": "FIXI Horror",
     "price": 28.9,
     "rating": 4.4,
     "sold": 175,
     "date": "2025-08-30",
-    "cover": "https://images.unsplash.com/photo-1526318472351-c75fcf070305"
+    "cover": "https://i.postimg.cc/pX0XqrQY/20804268.jpg"
   },
   {
-    "title": "Operasi Bayang",
-    "author": "Shaz Johar",
+    "title": "Mereka",
+    "author": "Ariff Adly",
     "category": "FIXI Thriller",
     "price": 37.5,
     "rating": 4.7,
     "sold": 300,
     "date": "2026-02-20",
-    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+    "cover": "https://i.postimg.cc/B6Nd4LnD/26137603.jpg"
   },
   {
-    "title": "Darah & Debu",
-    "author": "Adib Zaini",
+    "title": "Gantung",
+    "author": "Nadia Khan",
     "category": "FIXI Action",
     "price": 35.9,
     "rating": 4.6,
     "sold": 250,
     "date": "2026-01-02",
-    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+    "cover": "https://i.postimg.cc/sDn77Vvh/19208813.jpg"
   },
   {
-    "title": "Salahuddin Al-Ayyubi",
+    "title": "Salahuddin Al-Ayyubi: Pembebas Baitulmaqdis",
     "author": "Abdul Latip Talib",
     "category": "Historical Fiction",
     "price": 35,
     "rating": 4.8,
     "sold": 320,
     "date": "2026-01-10",
-    "cover": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+    "cover": "https://i.postimg.cc/NMHL9cZX/shopping.webp"
   },
   {
-    "title": "Sultan Muhammad Al-Fateh",
+    "title": "Sultan Muhammad Al-Fateh: Penakluk Konstantinopel",
     "author": "Abdul Latip Talib",
     "category": "Historical Fiction",
     "price": 36.5,
     "rating": 4.9,
     "sold": 410,
     "date": "2026-02-05",
-    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+    "cover": "https://i.postimg.cc/MZYqsH0p/download.jpg"
   },
   {
     "title": "Imam Syafi'i",
     "author": "Abdul Latip Talib",
-    "category": "Historical Fiction",
-    "price": 32.9,
+    "category": "Islamic Biography",
+    "price": 27.9,
     "rating": 4.7,
     "sold": 275,
     "date": "2025-12-18",
-    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a"
+    "cover": "https://i.postimg.cc/2y1GBVC8/images.jpg"
   },
   {
     "title": "Salahuddin Al-Ayyubi: Pembebas Baitulmaqdis",
@@ -817,17 +827,17 @@
     "rating": 4.8,
     "sold": 290,
     "date": "2025-11-22",
-    "cover": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+    "cover": "https://i.postimg.cc/RFHQM2dr/Umar-Aziz-front.jpg"
   },
   {
-    "title": "Raja Iskandar Zulkarnain",
+    "title": "Safiyyah: Wanita Hati Singa",
     "author": "Abdul Latip Talib",
     "category": "Historical Fiction",
     "price": 33.5,
     "rating": 4.7,
     "sold": 260,
     "date": "2025-10-30",
-    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+    "cover": "https://i.postimg.cc/63XTvSw5/59678421.jpg"
   },
   {
     "title": "Perang Salib",
@@ -837,17 +847,27 @@
     "rating": 4.6,
     "sold": 310,
     "date": "2026-01-25",
-    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+    "cover": "https://i.postimg.cc/d16QTV4p/download.jpg"
   },
   {
-    "title": "Khalid Al-Walid",
+    "title": "Khalid Al-Walid: Memburu Syahid",
     "author": "Abdul Latip Talib",
     "category": "Historical Fiction",
     "price": 35.5,
     "rating": 4.9,
     "sold": 450,
     "date": "2026-02-12",
-    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
+    "cover": "https://i.postimg.cc/3N6Tg4px/download.jpg"
+  },
+    {
+    "title": "Ali bin Abu Talib: Mutiara Ilmu Islam",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 34.0,
+    "rating": 5.0,
+    "sold": 450,
+    "date": "2026-02-12",
+    "cover": "https://i.postimg.cc/KYv3qwwg/shopping.webp"
   },
   {
     "title": "Sultan Salahuddin & Tentera Islam",
@@ -857,7 +877,37 @@
     "rating": 4.8,
     "sold": 380,
     "date": "2026-03-08",
-    "cover": "https://images.unsplash.com/photo-1500964757637-c85e8a162699"
+    "cover": "https://i.postimg.cc/MpJkq8Yk/1.jpg"
+  },
+   {
+    "title": "Abu Ubaidah: Penakluk Parsi",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 19.9,
+    "rating": 4.6,
+    "sold": 500,
+    "date": "2026-01-18",
+    "cover": "https://i.postimg.cc/T3T6n65Z/abu-ubaid-AH.jpg"
+  },
+    {
+    "title": "Tariq Bin Ziyad: Penakluk Andalusia",
+    "author": "Abdul Latip Talib",
+    "category": "Historical Fiction",
+    "price": 21.5,
+    "rating": 4.6,
+    "sold": 310,
+    "date": "2025-09-15",
+    "cover": "https://i.postimg.cc/QxX4bxS7/tariq.jpg"
+  },
+  {
+    "title": "Imam Maliki",
+    "author": "Abdul Latip Talib",
+    "category": "Islamic Biography",
+    "price": 25,
+    "rating": 4.7,
+    "sold": 390,
+    "date": "2026-02-10",
+    "cover": "https://i.postimg.cc/CLX8KcZB/shopping.webp"
   },
   {
     "title": "The Very Hungry Caterpillar",
@@ -900,16 +950,6 @@
     "cover": "https://covers.openlibrary.org/b/isbn/9780142403877-L.jpg"
   },
   {
-    "title": "Peppa Pig: Happy Family",
-    "author": "Neville Astley",
-    "category": "Children",
-    "price": 19.9,
-    "rating": 4.6,
-    "sold": 500,
-    "date": "2026-01-18",
-    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
-  },
-  {
     "title": "Disney Frozen: Anna & Elsa",
     "author": "Disney Books",
     "category": "Children",
@@ -930,16 +970,6 @@
     "cover": "https://covers.openlibrary.org/b/isbn/9780736420952-L.jpg"
   },
   {
-    "title": "Boboiboy Adventure Book",
-    "author": "Animonsta Studios",
-    "category": "Children",
-    "price": 25,
-    "rating": 4.7,
-    "sold": 390,
-    "date": "2026-02-10",
-    "cover": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
-  },
-  {
     "title": "Upin & Ipin Cerita Keluarga",
     "author": "Les' Copaque",
     "category": "Children",
@@ -948,16 +978,6 @@
     "sold": 520,
     "date": "2026-01-28",
     "cover": "https://i.postimg.cc/2j0HTZyJ/image.png"
-  },
-  {
-    "title": "Moral Stories for Kids",
-    "author": "Malaysia Kids Press",
-    "category": "Children",
-    "price": 21.5,
-    "rating": 4.6,
-    "sold": 310,
-    "date": "2025-09-15",
-    "cover": "https://images.unsplash.com/photo-1495640452828-3df6795cf69b"
   },
   {
     "title": "Looking for Alaska",
