@@ -35,7 +35,7 @@
     "category": "Fantasy",
     "price": 65,
     "rating": 4.7,
-    "sold": 250,
+    "sold": 600,
     "date": "2026-03-08",
     "cover": "https://i.postimg.cc/6qc1xytM/241638390.jpg"
   },
@@ -765,7 +765,7 @@
     "category": "FIXI Fiction",
     "price": 36,
     "rating": 4.8,
-    "sold": 260,
+    "sold": 689,
     "date": "2026-01-28",
     "cover": "https://i.postimg.cc/YCjVfs07/9789670042152.avif"
   },
@@ -915,7 +915,7 @@
     "category": "Historical Fiction",
     "price": 19.9,
     "rating": 4.6,
-    "sold": 500,
+    "sold": 747,
     "date": "2026-01-18",
     "cover": "https://i.postimg.cc/T3T6n65Z/abu-ubaid-AH.jpg"
   },
