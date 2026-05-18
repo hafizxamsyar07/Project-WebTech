@@ -28,6 +28,7 @@ export function initPromotionCarousel() {
   const carousel = document.querySelector("[data-promo-carousel]");
   if (!carousel) return;
 
+  // Carousel hanya aktif di home page; guard ini elak error pada page lain.
   const slides = [...carousel.querySelectorAll(".promo-slide")];
   const dotsContainer = carousel.querySelector("[data-promo-dots]");
 

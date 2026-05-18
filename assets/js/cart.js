@@ -245,6 +245,7 @@ async function sendOrderReceipt(order) {
   const client = getEmailJsClient();
   if (!client) throw new Error("EmailJS library is not loaded.");
 
+  // EmailJS handling: hantar receipt kepada customer dan notification kepada owner menggunakan data order yang sama.
   const params = {
     order_id: order.orderId,
     customer_email: order.customerEmail,
@@ -284,6 +285,7 @@ async function placeOrder() {
   const cart = Store.getCart();
   const form = getCheckoutForm();
 
+  // Checkout validation: pastikan cart dan maklumat wajib lengkap sebelum order disimpan.
   if (cart.length === 0) {
     alert("Your cart is empty.");
     return;
