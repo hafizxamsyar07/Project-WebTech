@@ -4,9 +4,9 @@ export const CONFIG = {
   openLibrarySearchUrl: "https://openlibrary.org/search.json",
   openLibraryCoverUrl: "https://covers.openlibrary.org/b/id",
   emailJs: {
-    serviceId: "service_t7dplie",
-    templateId: "template_51biafn",
-    publicKey: "lGjEsl-33gcenlZFr",
-    ownerEmail: "hafizamsyar146@gmail.com"
+    serviceId: "service_xml4a7e",
+    templateId: "template_u4dq14q",
+    publicKey: "LaRn2IoX_2DKftJIP",
+    ownerEmail: "smartbookstore89@gmail.com"
   }
 };
