@@ -1,4 +1,4 @@
-// Presentation note: File ini urus data buku, card buku, search, filter, sort, wishlist/cart action, dan back-to-top button di Books page.
+// Presentation note: File ini urus data buku, card buku, search, filter, sort, recommendation, dan wishlist/cart action.
 import { CONFIG } from "./config.js";
 import { addBookToCart } from "./cart.js";
 import { Store } from "./storage.js";
@@ -243,6 +243,7 @@ function renderFilteredBookPage() {
   const container = document.getElementById("categoryBooks");
   if (!container) return;
 
+  // Filtering system: gabungkan keyword search, category semasa, dan pilihan sorting sebelum render card.
   const keyword = (document.getElementById("bookSearch")?.value || "").trim().toLowerCase();
   const categoryBooks = getBooksForCurrentCategory();
   const filtered = categoryBooks.filter(book => {
@@ -426,23 +427,8 @@ function clearBookFilters() {
   renderFilteredBookPage();
 }
 
-function initBackToTopButton() {
-  const button = document.getElementById("backToTopButton");
-  if (!button) return;
-
-  const toggleButton = () => {
-    button.classList.toggle("show", window.scrollY > 420);
-  };
-
-  button.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  window.addEventListener("scroll", toggleButton, { passive: true });
-  toggleButton();
-}
-
 function initCatalogEvents() {
+  // Event delegation: satu listener pada document cukup untuk semua book card yang dirender secara dinamik.
   document.addEventListener("click", event => {
     const actionButton = event.target.closest("[data-book-action]");
     const card = event.target.closest(".book-card");
@@ -500,7 +486,6 @@ function initCatalogEvents() {
 
   document.getElementById("clearBookFilters")?.addEventListener("click", clearBookFilters);
   document.getElementById("emptyClearBookFilters")?.addEventListener("click", clearBookFilters);
-  initBackToTopButton();
 }
 
 export async function initCatalog() {

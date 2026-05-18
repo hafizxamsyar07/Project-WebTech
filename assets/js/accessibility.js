@@ -14,6 +14,7 @@ const tools = [
 ];
 
 function applyAccessibilityAction(action) {
+  // Accessibility actions: setiap button toggle class pada body supaya CSS boleh ubah paparan seluruh website.
   if (action === "increase") currentFontSize += 10;
   if (action === "decrease") currentFontSize = Math.max(80, currentFontSize - 10);
 

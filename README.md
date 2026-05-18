@@ -61,6 +61,7 @@ Project-WebTech/
         |-- nav.js
         |-- promotions.js
         |-- storage.js
+        |-- ui.js
         |-- utils.js
         `-- wishlist.js
 ```
@@ -76,6 +77,7 @@ Project-WebTech/
 - `detail.js` renders the selected book detail.
 - `promotions.js` controls the home page promotion carousel.
 - `accessibility.js` creates the accessibility panel and applies visual settings.
+- `ui.js` contains shared user-interface behavior such as the back-to-top button.
 - `utils.js` contains shared helper functions such as price formatting, HTML escaping, visibility control, and toast messages.
 
 ## API, AJAX, and JSON Usage

@@ -30,6 +30,12 @@
   --footer-text: #9ba7b7;
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
   --radius: 18px;
+  --container: 1180px;
+  --container-wide: 1280px;
+  --page-pad: clamp(14px, 3vw, 40px);
+  --section-gap: clamp(24px, 4vw, 44px);
+  --card-pad: clamp(16px, 2.4vw, 28px);
+  --touch-target: 44px;
 }
 
 body.light-mode {
@@ -63,6 +69,7 @@ body.light-mode .remove-btn {
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -73,6 +80,7 @@ body {
   color: var(--text);
   color-scheme: dark;
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
 }
 
 body.light-mode {
@@ -89,6 +97,7 @@ input,
 select,
 textarea {
   font: inherit;
+  max-width: 100%;
 }
 
 button,
@@ -96,8 +105,31 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+a {
+  color: inherit;
+}
+
+button,
+select,
+input,
+textarea {
+  min-height: var(--touch-target);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 70%, transparent);
+  outline-offset: 3px;
+}
+
 .page-wrapper {
+  display: flex;
+  min-width: 0;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 /* Shared navigation digunakan oleh semua page. */
@@ -108,8 +140,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
-  padding: 22px 40px;
+  gap: clamp(14px, 2vw, 24px);
+  padding: clamp(14px, 2vw, 22px) var(--page-pad);
   border-bottom: 1px solid var(--line);
   background: var(--nav-bg);
   backdrop-filter: blur(10px);
@@ -127,15 +159,20 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: clamp(10px, 1.8vw, 22px);
+  min-width: 0;
 }
 
 .nav-links a {
   position: relative;
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
   color: var(--muted);
   font-size: 14px;
   font-weight: 650;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -155,8 +192,8 @@ a {
 
 .footer {
   width: 100%;
-  margin-top: 40px;
-  padding: 20px;
+  margin-top: auto;
+  padding: 20px var(--page-pad);
   border-top: 1px solid var(--line);
   background: var(--surface);
   color: var(--footer-text);
@@ -220,9 +257,9 @@ a {
 .wishlist-page,
 .detail-container,
 .about-page {
-  max-width: 1180px;
+  width: min(100%, var(--container));
   margin: 0 auto;
-  padding: 38px 24px 70px;
+  padding: clamp(26px, 4vw, 38px) var(--page-pad) 70px;
 }
 
 .home-page {
@@ -242,7 +279,8 @@ a {
 }
 
 .header-right .search-box {
-  width: min(38vw, 420px);
+  width: clamp(240px, 34vw, 420px);
+  min-width: 0;
 }
 
 .search-control {
@@ -253,7 +291,7 @@ a {
 
 .search-box input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 0 16px;
   border: 1px solid #d3dae6;
   border-radius: 14px;
   background: var(--surface);
@@ -264,8 +302,8 @@ a {
 
 .search-submit {
   display: grid;
-  min-width: 44px;
-  min-height: 48px;
+  min-width: var(--touch-target);
+  min-height: var(--touch-target);
   place-items: center;
   border: 0;
   border-radius: 10px;
@@ -328,6 +366,7 @@ a {
   text-align: left;
   cursor: pointer;
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+  overflow-wrap: anywhere;
 }
 
 .suggestion-item:hover {
@@ -364,7 +403,7 @@ a {
 .books,
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 18px;
 }
 
@@ -379,17 +418,21 @@ a {
   gap: 16px;
   overflow-x: auto;
   padding: 3px 2px 16px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
 }
 
 .scroll-container .book-card,
 .recommendation-row .book-card {
-  flex: 0 0 224px;
+  flex: 0 0 clamp(200px, 22vw, 240px);
+  scroll-snap-align: start;
 }
 
 .book-card {
   position: relative;
   display: flex;
-  min-height: 430px;
+  min-width: 0;
+  min-height: 100%;
   flex-direction: column;
   overflow: hidden;
   padding: 14px;
@@ -415,11 +458,12 @@ a {
 }
 
 .book-card h3 {
-  min-height: 46px;
+  min-height: 2.7em;
   margin: 12px 0 6px;
   color: var(--text);
   font-size: 16px;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .price {
@@ -452,6 +496,7 @@ a {
 }
 
 .meta span {
+  min-width: 0;
   padding: 5px 8px;
   border-radius: 999px;
   background: var(--accent-soft);
@@ -462,7 +507,7 @@ a {
 
 .book-card > button {
   width: 100%;
-  min-height: 42px;
+  min-height: var(--touch-target);
   margin-top: auto;
   border: 0;
   border-radius: 12px;
@@ -516,8 +561,8 @@ a {
 .wishlist-hero,
 .books-hero {
   display: grid;
-  gap: 32px;
-  padding: 44px;
+  gap: clamp(20px, 4vw, 32px);
+  padding: clamp(22px, 4vw, 44px);
   border: 1px solid var(--line);
   border-radius: 24px;
   background: var(--hero-bg);
@@ -525,7 +570,7 @@ a {
 }
 
 .home-hero {
-  grid-template-columns: minmax(0, 0.8fr) minmax(460px, 1.2fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(min(460px, 100%), 1.2fr);
   align-items: center;
 }
 
@@ -538,6 +583,7 @@ a {
   font-size: 46px;
   line-height: 1.08;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .home-hero p,
@@ -562,7 +608,7 @@ a {
 .promo-carousel {
   position: relative;
   width: 100vw;
-  min-height: clamp(210px, 18vw, 270px);
+  min-height: clamp(250px, 24vw, 340px);
   margin: 0 0 0 calc(50% - 50vw);
   overflow: hidden;
   border-radius: 0;
@@ -574,14 +620,14 @@ a {
 .promo-slide {
   width: 100%;
   height: 100%;
-  min-height: clamp(210px, 18vw, 270px);
+  min-height: clamp(250px, 24vw, 340px);
 }
 
 .promo-slide {
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: minmax(260px, 0.7fr) minmax(360px, 1fr);
+  grid-template-columns: minmax(min(280px, 100%), 0.7fr) minmax(min(360px, 100%), 1fr);
   gap: clamp(20px, 4vw, 70px);
   align-items: center;
   padding: 26px clamp(54px, 7vw, 120px);
@@ -628,7 +674,7 @@ a {
 
 .promo-slide a {
   display: inline-flex;
-  min-height: 42px;
+  min-height: var(--touch-target);
   align-items: center;
   justify-content: center;
   padding: 0 18px;
@@ -788,8 +834,8 @@ a {
   top: 50%;
   z-index: 4;
   display: grid;
-  width: 38px;
-  height: 38px;
+  width: var(--touch-target);
+  height: var(--touch-target);
   place-items: center;
   border: 0;
   border-radius: 50%;
@@ -835,7 +881,7 @@ a {
 }
 
 .home-section {
-  margin-top: 42px;
+  margin-top: var(--section-gap);
 }
 
 .section-title {
@@ -860,14 +906,14 @@ a {
 
 .popular-category-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 34px 28px;
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+  gap: clamp(18px, 3vw, 28px);
   margin-top: 28px;
 }
 
 .popular-category-card {
   display: block;
-  min-height: 250px;
+  min-height: 0;
   padding: 10px;
   border-radius: var(--radius);
   color: var(--text);
@@ -891,7 +937,7 @@ a {
 .category-covers {
   position: relative;
   display: flex;
-  min-height: 180px;
+  min-height: 170px;
   align-items: flex-end;
   justify-content: center;
 }
@@ -950,7 +996,7 @@ a {
 
 .books-toolbar {
   display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr)) auto;
+  grid-template-columns: repeat(2, minmax(min(220px, 100%), 1fr)) minmax(120px, auto);
   gap: 14px;
   align-items: end;
   margin: 22px 0 30px;
@@ -973,7 +1019,7 @@ a {
 .book-filter select,
 .clear-filter-btn {
   width: 100%;
-  min-height: 44px;
+  min-height: var(--touch-target);
   border: 1px solid #cbd5e1;
   border-radius: 12px;
   background: var(--surface);
@@ -1096,13 +1142,14 @@ a {
 
 .wishlist-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
   gap: 18px;
 }
 
 .wishlist-card {
   display: flex;
-  min-height: 390px;
+  min-width: 0;
+  min-height: 100%;
   flex-direction: column;
   overflow: hidden;
   padding: 14px;
@@ -1134,22 +1181,23 @@ a {
 }
 
 .wishlist-card h3 {
-  min-height: 44px;
+  min-height: 2.7em;
   margin: 12px 0 6px;
   font-size: 16px;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .wishlist-actions {
   display: grid;
-  grid-template-columns: 1fr 0.85fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   margin-top: auto;
   padding-top: 14px;
 }
 
 .wishlist-actions button {
-  min-height: 42px;
+  min-height: var(--touch-target);
   border: 0;
   border-radius: 12px;
   cursor: pointer;
@@ -1207,13 +1255,14 @@ a {
 
 .cart-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 360px);
   gap: 24px;
   align-items: start;
 }
 
 .cart-list-panel,
 .checkout-panel {
+  min-width: 0;
   border: 1px solid #e9edf3;
   border-radius: var(--radius);
   background: var(--surface);
@@ -1252,6 +1301,7 @@ a {
 
 .cart-item {
   display: flex;
+  min-width: 0;
   align-items: center;
   gap: 16px;
   padding: 16px 0;
@@ -1279,6 +1329,7 @@ a {
 .cart-info h3 {
   margin: 0;
   font-size: 16px;
+  overflow-wrap: anywhere;
 }
 
 .cart-info .price {
@@ -1296,8 +1347,10 @@ a {
 }
 
 .qty-control button {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  min-height: 34px;
   border: 0;
   border-radius: 50%;
   background: var(--button-bg);
@@ -1314,6 +1367,7 @@ a {
 }
 
 .cart-right {
+  flex: 0 0 auto;
   min-width: 100px;
   text-align: right;
 }
@@ -1327,7 +1381,8 @@ a {
 .remove-btn {
   border: 0;
   border-radius: 999px;
-  padding: 7px 10px;
+  min-height: 36px;
+  padding: 7px 12px;
   cursor: pointer;
   font-size: 12px;
   font-weight: 750;
@@ -1356,7 +1411,7 @@ a {
 
 .empty-cart a {
   display: inline-flex;
-  min-height: 42px;
+  min-height: var(--touch-target);
   align-items: center;
   justify-content: center;
   margin-top: 4px;
@@ -1387,6 +1442,7 @@ a {
   background: var(--surface);
   color: var(--text);
   outline: none;
+  resize: vertical;
 }
 
 .checkout-panel input:focus,
@@ -1410,7 +1466,7 @@ a {
 
 .voucher-control {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(88px, auto);
   gap: 8px;
   margin-top: 7px;
 }
@@ -1421,7 +1477,7 @@ a {
 }
 
 .voucher-control button {
-  min-height: 44px;
+  min-height: var(--touch-target);
   padding: 0 14px;
   border: 0;
   border-radius: 10px;
@@ -1491,9 +1547,9 @@ a {
 /* Invoice page */
 .invoice-page {
   width: 100%;
-  max-width: 1280px;
+  max-width: var(--container-wide);
   margin: 0 auto;
-  padding: 38px 24px 70px;
+  padding: clamp(26px, 4vw, 38px) var(--page-pad) 70px;
 }
 
 .order-confirmation {
@@ -1526,7 +1582,7 @@ a {
 .invoice-shell {
   width: 100%;
   overflow: hidden;
-  padding: 28px;
+  padding: var(--card-pad);
   border-radius: 22px;
   box-shadow: var(--shadow);
 }
@@ -1577,7 +1633,7 @@ a {
 
 .invoice-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 340px);
   gap: 24px;
   align-items: start;
 }
@@ -1590,7 +1646,7 @@ a {
 }
 
 .invoice-card {
-  padding: 22px;
+  padding: clamp(16px, 2vw, 22px);
   border-radius: 18px;
 }
 
@@ -1620,6 +1676,7 @@ a {
 .invoice-table-wrap {
   max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .invoice-table {
@@ -1873,7 +1930,7 @@ body.light-mode .history-clear-btn {
 
 .invoice-empty a {
   display: inline-flex;
-  min-height: 42px;
+  min-height: var(--touch-target);
   align-items: center;
   justify-content: center;
   margin-top: 8px;
@@ -1900,10 +1957,10 @@ body.light-mode .history-clear-btn {
 
 .detail-card {
   display: grid;
-  grid-template-columns: 390px minmax(0, 1fr);
-  gap: 34px;
+  grid-template-columns: minmax(min(320px, 100%), 390px) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 34px);
   align-items: stretch;
-  padding: 28px;
+  padding: var(--card-pad);
   border: 1px solid #e9edf3;
   border-radius: 24px;
   background: var(--surface);
@@ -1912,7 +1969,7 @@ body.light-mode .history-clear-btn {
 
 .detail-image {
   display: flex;
-  min-height: 470px;
+  min-height: clamp(320px, 42vw, 470px);
   align-items: center;
   justify-content: center;
   padding: 24px;
@@ -1939,6 +1996,7 @@ body.light-mode .history-clear-btn {
   margin: 18px 0 12px;
   font-size: 38px;
   line-height: 1.12;
+  overflow-wrap: anywhere;
 }
 
 .detail-rating {
@@ -1973,7 +2031,7 @@ body.light-mode .history-clear-btn {
 
 .detail-benefits {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin: 8px 0 22px;
 }
@@ -2009,7 +2067,7 @@ body.light-mode .history-clear-btn {
 .detail-actions button,
 .detail-actions a {
   display: inline-flex;
-  min-height: 46px;
+  min-height: var(--touch-target);
   align-items: center;
   justify-content: center;
   padding: 0 18px;
@@ -2037,7 +2095,7 @@ body.light-mode .history-clear-btn {
 
 .feedback-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 18px;
 }
 
@@ -2074,7 +2132,7 @@ body.light-mode .history-clear-btn {
 
 /* About page */
 .about-hero {
-  grid-template-columns: minmax(0, 1fr) 280px;
+  grid-template-columns: minmax(0, 1fr) minmax(min(260px, 100%), 280px);
   align-items: stretch;
 }
 
@@ -2111,13 +2169,13 @@ body.light-mode .history-clear-btn {
 }
 
 .about-stats {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
   margin: 26px 0 42px;
 }
 
 .feature-grid,
 .team-gallery {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
 }
 
 .about-stats div,
@@ -2155,7 +2213,7 @@ body.light-mode .history-clear-btn {
 }
 
 .feature-card {
-  min-height: 190px;
+  min-height: 0;
   transition: 0.25s;
 }
 
@@ -2189,7 +2247,7 @@ body.light-mode .history-clear-btn {
 
 .about-process {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: 24px;
   align-items: start;
   margin-top: 34px;
@@ -2203,7 +2261,7 @@ body.light-mode .history-clear-btn {
 
 .process-list div {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: minmax(90px, 110px) minmax(0, 1fr);
   gap: 12px;
   align-items: center;
   padding: 14px;
@@ -2241,12 +2299,20 @@ body.light-mode .history-clear-btn {
   margin: 0;
   color: var(--muted);
   font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.team-member a {
+  color: var(--accent);
+  font-weight: 750;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 /* Toast */
 #toast {
   position: fixed;
-  right: 20px;
+  right: var(--page-pad);
   bottom: 20px;
   z-index: 9999;
   padding: 12px 18px;
@@ -2383,6 +2449,23 @@ body.negative .footer {
 }
 
 /* Responsive rules */
+/* Presentation note: Breakpoints below progressively reduce columns and spacing so the same layout works on tablets, phones, and high browser zoom. */
+@media (min-width: 1440px) {
+  .home-page,
+  .books-page,
+  .cart-page,
+  .wishlist-page,
+  .detail-container,
+  .about-page {
+    width: min(100%, var(--container-wide));
+  }
+
+  .books,
+  .book-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
+
 @media (max-width: 980px) {
   .home-hero,
   .about-hero,
@@ -2403,6 +2486,15 @@ body.negative .footer {
   .detail-image {
     min-height: auto;
   }
+
+  .cart-layout,
+  .invoice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-panel {
+    position: static;
+  }
 }
 
 @media (max-width: 860px) {
@@ -2416,6 +2508,10 @@ body.negative .footer {
     padding: 16px;
   }
 
+  .logo {
+    justify-content: center;
+  }
+
   .header-right .search-box,
   .search-box {
     width: 100%;
@@ -2424,12 +2520,15 @@ body.negative .footer {
   .nav-links {
     width: 100%;
     gap: 10px;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
     padding-bottom: 4px;
   }
 
   .nav-links a {
-    flex: 0 0 auto;
+    flex: 1 1 92px;
+    justify-content: center;
     padding: 8px 10px;
     border-radius: 999px;
     background: var(--surface-soft);
@@ -2440,13 +2539,13 @@ body.negative .footer {
   }
 
   .books-toolbar {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .books,
   .book-grid,
   .wishlist-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
   }
 
   .all-books-heading,
@@ -2455,14 +2554,6 @@ body.negative .footer {
   .tracking-box {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .checkout-panel {
-    position: static;
-  }
-
-  .invoice-grid {
-    grid-template-columns: 1fr;
   }
 
   .invoice-main {
@@ -2483,6 +2574,11 @@ body.negative .footer {
 }
 
 @media (max-width: 620px) {
+  :root {
+    --radius: 14px;
+    --page-pad: 14px;
+  }
+
   .home-page,
   .books-page,
   .cart-page,
@@ -2585,7 +2681,7 @@ body.negative .footer {
 
   .book-card > button,
   .wishlist-actions button {
-    min-height: 38px;
+    min-height: var(--touch-target);
     font-size: 13px;
   }
 
@@ -2609,7 +2705,7 @@ body.negative .footer {
 
   .promo-slide {
     grid-template-columns: 1fr;
-    padding: 28px 48px 58px;
+    padding: 28px 44px 58px;
   }
 
   .promo-slide h2 {
@@ -2733,7 +2829,7 @@ body.negative .footer {
 
   .cart-item {
     display: grid;
-    grid-template-columns: 70px 1fr;
+    grid-template-columns: 70px minmax(0, 1fr);
     align-items: flex-start;
   }
 
@@ -2759,7 +2855,7 @@ body.negative .footer {
   .accessibility-panel {
     right: 12px;
     bottom: 78px;
-    width: calc(100vw - 56px);
+    width: calc(100vw - 24px);
   }
 
   .accessibility-tab {
@@ -2776,13 +2872,79 @@ body.negative .footer {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 480px) {
+  .navbar {
+    align-items: stretch;
+  }
+
+  .logo span {
+    overflow-wrap: anywhere;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .nav-links a {
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .books-toolbar,
+  .voucher-control,
+  .wishlist-actions,
+  .detail-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-actions button,
+  .detail-actions a,
+  .hero-actions a,
+  .about-actions a,
+  .wishlist-browse-btn {
+    width: 100%;
+  }
+
+  .cart-panel-header,
+  .history-tools,
+  .invoice-totals p,
+  .cart-summary div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cart-item {
+    grid-template-columns: 62px minmax(0, 1fr);
+  }
+
+  .cart-item img {
+    width: 58px;
+    height: 80px;
+  }
+
+  .cart-right {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 340px) {
   .books,
   .book-grid,
   .wishlist-grid,
   .scroll-container,
   .recommendation-row {
     grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .promo-slide {
+    padding-right: 38px;
+    padding-left: 38px;
   }
 }
 
