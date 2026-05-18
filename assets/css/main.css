@@ -2730,7 +2730,7 @@ body.negative .footer {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 320px) {
   .books,
   .book-grid,
   .wishlist-grid,
